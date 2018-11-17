@@ -1,7 +1,8 @@
 {
-  "presets": ["react-app-tools/config/babel"],
-  "plugins": [
-    ["babel-plugin-lodash", { "id": ["lodash", "recompose"] }],
-    "babel-plugin-relay"
-  ]
+  "presets": ["babel-preset-expo"],
+  "env": {
+    "development": {
+      "plugins": ["transform-react-jsx-source"]
+    }
+  }
 }
