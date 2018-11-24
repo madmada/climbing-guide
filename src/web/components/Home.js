@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Jumbotron } from 'reactstrap';
+import GoogleMap from './GoogleMap';
 
 const About = () => (
   <div>
@@ -117,6 +118,7 @@ const About = () => (
       </Col>
     </Row>
     <hr />
+    <GoogleMap />
     <Row className="pt-5">
       <Col xs="5" sm="3" lg="2" className="offset-lg-2">
         <img className="img-fluid rounded-circle" src="https://avatars0.githubusercontent.com/u/1809236?s=460&v=4" alt="Matt Mcnamee" />
