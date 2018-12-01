@@ -1,6 +1,5 @@
 {
-  "name": "rnsk",
-  "homepage": "http://react-boilerplate.mcnam.ee/",
+  "name": "climbingguide",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -35,15 +34,11 @@
     "uglifyjs-webpack-plugin": "^1.3.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5",
+    "webpack-dev-server": "^3.1.10",
     "webpack-hot-middleware": "^2.22.3"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
     "test": "node node_modules/jest/bin/jest.js --watch",
     "web": "webpack-dev-server --content-base build/ --config webpack/web.dev.config.js --mode development --port 3001 --inline --hot --colors --historyApiFallback",
     "web-bundle": "webpack --config webpack/web.prod.config.js --progress --colors --mode production",
@@ -78,6 +73,7 @@
     "redux": "^4.0.0",
     "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
-    "sugarss": "^2.0.0"
+    "sugarss": "^2.0.0",
+    "supercluster": "^5.0.0"
   }
 }
