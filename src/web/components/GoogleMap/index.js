@@ -6,7 +6,6 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class GoogleMap extends Component {
-
   render() {
     return (
       // Important! Always set the container height explicitly
