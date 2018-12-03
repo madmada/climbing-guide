@@ -6,18 +6,10 @@ const Footer = () => (
     <Row>
       <Col sm="12" className="text-right pt-3">
         <p>
-          Learn More on the
+          Serwis realizowany w ramach pracy inżynierskiej.
           {' '}
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/mcnamee/react-native-starter-kit">
-            Github Repo
-          </a>
-          {' '}
-          &nbsp; | &nbsp; Written and Maintained by
-          {' '}
-          <a target="_blank" rel="noopener noreferrer" href="https://mcnam.ee">
-            Matt Mcnamee
-          </a>
-          .
+          &nbsp; | &nbsp;
+            Adam Pałka, 2018
         </p>
       </Col>
     </Row>

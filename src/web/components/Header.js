@@ -71,17 +71,17 @@ class Header extends Component {
               </div>
               <UncontrolledDropdown nav>
                 <DropdownToggle nav caret>
-                  {loggedIn ? `Hi, ${member.firstName}` : 'My Account'}
+                  {loggedIn ? `Witaj, ${member.firstName}` : 'My Account'}
                 </DropdownToggle>
                 <DropdownMenu>
                   {!loggedIn
                     && (
                     <div>
                       <DropdownItem tag={Link} to="/login">
-                          Login
+                        Zaloguj się
                       </DropdownItem>
                       <DropdownItem tag={Link} to="/sign-up">
-                        Sign Up
+                        Zarejestruj się
                       </DropdownItem>
                     </div>
                     )
@@ -90,11 +90,11 @@ class Header extends Component {
                     && (
                     <div>
                       <DropdownItem tag={Link} to="/update-profile">
-                        Update Profile
+                        Profil
                       </DropdownItem>
                       <DropdownItem divider />
                       <DropdownItem tag="button" onClick={this.onLogout}>
-                        Logout
+                        Wyloguj się
                       </DropdownItem>
                     </div>
                     )

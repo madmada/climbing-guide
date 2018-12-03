@@ -14,7 +14,7 @@ const Error = ({ title, content }) => (
       </p>
       <p>
         <Link to="/" className="btn btn-primary">
-          Go Home
+          Powrót na właściwy szlak
         </Link>
       </p>
     </Col>
@@ -27,8 +27,8 @@ Error.propTypes = {
 };
 
 Error.defaultProps = {
-  title: 'Uh oh',
-  content: 'An unexpected error came up',
+  title: 'Oj!',
+  content: 'Przepraszamy pojawił się nieznany błąd.',
 };
 
 export default Error;

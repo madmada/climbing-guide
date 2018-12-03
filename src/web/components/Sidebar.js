@@ -15,6 +15,24 @@ const SidebarNavItems = () => (
       </Link>
     </NavItem>
     <NavItem>
+      <Link className={`nav-link ${window.location.pathname === '/search' && 'active'}`} to="/search">
+        <i className="icon-magnifier" />
+        {' '}
+        <span>
+          Szukaj
+        </span>
+      </Link>
+    </NavItem>
+    <NavItem>
+      <Link className={`nav-link ${window.location.pathname.startsWith('/recipe') && 'active'}`} to="/recipes">
+        <i className="icon-directions" />
+        {' '}
+        <span>
+          Artykuły
+        </span>
+      </Link>
+    </NavItem>
+    <NavItem>
       <Link className={`nav-link ${window.location.pathname.startsWith('/recipe') && 'active'}`} to="/recipes">
         <i className="icon-notebook" />
         {' '}

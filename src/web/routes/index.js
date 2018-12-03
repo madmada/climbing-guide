@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 // Templates
-import TemplateNothing from '../components/TemplateNothing';
+import TemplateBlank from '../components/TemplateBlank';
 import TemplateSidebar from '../components/TemplateSidebar';
 
 // Routes
@@ -40,25 +40,25 @@ const Index = () => (
     <Route
       path="/sign-up"
       render={props => (
-        <TemplateNothing>
+        <TemplateBlank>
           <SignUpContainer {...props} Layout={SignUpComponent} />
-        </TemplateNothing>
+        </TemplateBlank>
       )}
     />
     <Route
       path="/login"
       render={props => (
-        <TemplateNothing>
+        <TemplateBlank>
           <LoginContainer {...props} Layout={LoginComponent} />
-        </TemplateNothing>
+        </TemplateBlank>
       )}
     />
     <Route
       path="/forgot-password"
       render={props => (
-        <TemplateNothing>
+        <TemplateBlank>
           <ForgotPasswordContainer {...props} Layout={ForgotPasswordComponent} />
-        </TemplateNothing>
+        </TemplateBlank>
       )}
     />
     <Route
@@ -66,6 +66,14 @@ const Index = () => (
       render={props => (
         <TemplateSidebar>
           <UpdateProfileContainer {...props} Layout={UpdateProfileComponent} />
+        </TemplateSidebar>
+      )}
+    />
+    <Route
+      path="/search"
+      render={props => (
+        <TemplateSidebar>
+          <RecipesContainer {...props} Layout={RecipesComponent} />
         </TemplateSidebar>
       )}
     />
@@ -88,7 +96,7 @@ const Index = () => (
     <Route
       render={props => (
         <TemplateSidebar>
-          <Error {...props} title="404" content="Sorry, the route you requested does not exist" />
+          <Error {...props} title="404" content="Przepraszamy, podana strona nie istnieje." />
         </TemplateSidebar>
       )}
     />
