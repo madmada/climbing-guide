@@ -12,8 +12,7 @@ class GoogleMap extends Component {
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{
-            // API - do not push on github
-            key: 'AIzaSyAGRFJrTOeS1TTBGFahjp4NlkIcFrd4RDM',
+            key: '',
             language: 'pl',
             ragion: 'pl',
           }}

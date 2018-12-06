@@ -19,6 +19,4 @@ export default {
   recipe404: 'Recipe not found',
   missingMealId: 'Missing meal definition',
 
-  // Locale
-  localeDoesNotExist: 'Sorry, we do not support that local',
 };
