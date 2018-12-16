@@ -12,6 +12,9 @@ import RecipesContainer from '../../containers/Recipes';
 import RecipesComponent from '../components/Recipes';
 import RecipeViewComponent from '../components/Recipe';
 
+import RocksContainer from '../../containers/Rocks';
+import RocksComponent from '../components/RockList';
+
 import SignUpContainer from '../../containers/SignUp';
 import SignUpComponent from '../components/SignUp';
 
@@ -73,7 +76,7 @@ const Index = () => (
       path="/search"
       render={props => (
         <TemplateSidebar>
-          <RecipesContainer {...props} Layout={RecipesComponent} />
+          <RocksContainer {...props} Layout={RocksComponent} />
         </TemplateSidebar>
       )}
     />
