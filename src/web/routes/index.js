@@ -14,6 +14,7 @@ import RecipeViewComponent from '../components/Recipe';
 
 import RocksContainer from '../../containers/Rocks';
 import RocksComponent from '../components/RockList';
+import RockViewComponent from '../components/Rock';
 
 import SignUpContainer from '../../containers/SignUp';
 import SignUpComponent from '../components/SignUp';
@@ -77,6 +78,14 @@ const Index = () => (
       render={props => (
         <TemplateSidebar>
           <RocksContainer {...props} Layout={RocksComponent} />
+        </TemplateSidebar>
+      )}
+    />
+    <Route
+      path="/rock/:id"
+      render={props => (
+        <TemplateSidebar>
+          <RocksContainer {...props} Layout={RockViewComponent} />
         </TemplateSidebar>
       )}
     />

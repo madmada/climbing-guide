@@ -1,19 +1,18 @@
 export default {
   // Defaults
-  default: 'Hmm, an unknown error occured',
-  timeout: 'Server Timed Out. Check your internet connection',
-  invalidJson: 'Response returned is not valid JSON',
+  default: 'Przerpaszamy, wystąpił błąd na stronie.',
+  timeout: 'Serwer nieodpowiada. Sprawdź status swojego połączenia internetowego',
 
   // Firebase Related
   invalidFirebase: 'Firebase is not connected correctly',
 
   // Member
-  memberExists: 'Member already exists',
-  missingFirstName: 'First name is missing',
-  missingLastName: 'Last name is missing',
-  missingEmail: 'Email is missing',
-  missingPassword: 'Password is missing',
-  passwordsDontMatch: 'Passwords do not match',
+  memberExists: 'Użytkownik już istnieje',
+  missingFirstName: 'Brakujące pole: Imię',
+  missingLastName: 'Brakujące pole: Nazwisko',
+  missingEmail: 'Brakujące pole: Email',
+  missingPassword: 'Brakujące pole: Hasło',
+  passwordsDontMatch: 'Podane hasła się różnią',
 
   // Recipes
   recipe404: 'Recipe not found',

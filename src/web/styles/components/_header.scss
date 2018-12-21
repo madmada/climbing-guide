@@ -5,8 +5,8 @@
 header {
   svg {
     position: absolute;
-    right: -20%;
-    top: 2px;
+    right: -25%;
+    top: 7px;
   }
 }
 
@@ -14,12 +14,12 @@ header {
   position: relative;
   text-transform: uppercase;
   letter-spacing: 6px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .dropdown-item {
   &, a {
-    color: #473BE7;
+    color: $primary;
     text-decoration: none !important;
   }
 

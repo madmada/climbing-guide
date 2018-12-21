@@ -1,0 +1,18 @@
+export default {
+  0: 'Dolnośląskie',
+  1: 'Kujawsko-pomorskie',
+  2: 'Lubelskie',
+  3: 'Lubuskie',
+  4: 'Łódzkie',
+  5: 'Małopolskie',
+  6: 'Mazowieckie',
+  7: 'Opolskie',
+  8: 'Podkarpackie',
+  9: 'Podlaskie',
+  10: 'Pomorskie',
+  11: 'Śląskie',
+  12: 'Świętokrzyskie',
+  13: 'Warmińsko-mazurskie',
+  14: 'Wielkopolskie',
+  15: 'Zachodniopomorskie',
+};
