@@ -75,7 +75,7 @@ class SignUp extends React.Component {
       <div>
         <Row>
           <Col lg={{ size: 6, offset: 3 }}>
-            <Card>
+            <Card className="input-card">
               <CardHeader>
                 Sign Up
               </CardHeader>

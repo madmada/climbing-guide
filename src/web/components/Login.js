@@ -72,9 +72,9 @@ class Login extends React.Component {
       <div>
         <Row>
           <Col lg={{ size: 6, offset: 3 }}>
-            <Card>
+            <Card className="input-card">
               <CardHeader>
-                Login
+                Zaloguj się
               </CardHeader>
               <CardBody>
                 {!!success && (
@@ -103,7 +103,7 @@ class Login extends React.Component {
                   </FormGroup>
                   <FormGroup>
                     <Label for="password">
-                      Password
+                      Hasło
                     </Label>
                     <Input
                       type="password"
@@ -122,16 +122,16 @@ class Login extends React.Component {
                 <hr />
 
                 <Row>
-                  <Col sm="6">
-                    Need an account?
+                  <Col sm="7">
+                    Nie masz konta?
                     {' '}
                     <Link to="/sign-up">
-                      Sign Up
+                      Zarejestruj się
                     </Link>
                   </Col>
-                  <Col sm="6" className="text-right">
+                  <Col sm="5" className="text-right">
                     <Link to="/forgot-password">
-                      Forgot Password?
+                      Zapomniałeś hasła?
                     </Link>
                   </Col>
                 </Row>

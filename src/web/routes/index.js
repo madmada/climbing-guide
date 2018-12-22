@@ -68,13 +68,13 @@ const Index = () => (
     <Route
       path="/update-profile"
       render={props => (
-        <TemplateSidebar>
+        <TemplateBlank>
           <UpdateProfileContainer {...props} Layout={UpdateProfileComponent} />
-        </TemplateSidebar>
+        </TemplateBlank>
       )}
     />
     <Route
-      path="/search"
+      path="/rocks"
       render={props => (
         <TemplateSidebar>
           <RocksContainer {...props} Layout={RocksComponent} />

@@ -104,7 +104,7 @@ const RockView = ({
       </Row>
       <Row className="pb-3">
         <Col sm="12">
-          <Link className="btn btn-secondary" to="/search">
+          <Link className="btn btn-secondary" to="/rocks">
             <i className="icon-arrow-left" />
             {' '}
             Powrót

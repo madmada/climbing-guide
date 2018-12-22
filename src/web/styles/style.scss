@@ -4,6 +4,7 @@
 @import "components/loading";
 @import "components/header";
 @import "components/footer";
+@import "components/rocks";
 
 body {
   padding-top: 3.5em;
@@ -19,6 +20,10 @@ body {
     border-color: $gray-400;
     border-bottom-color: $primary;
   }
+}
+
+.input-card {
+  margin-top: 10vh
 }
 
 .btn {

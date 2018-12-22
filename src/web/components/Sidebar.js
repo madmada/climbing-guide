@@ -10,16 +10,25 @@ const SidebarNavItems = () => (
         <i className="icon-home" />
         {' '}
         <span>
-          Home
+          Start
         </span>
       </Link>
     </NavItem>
     <NavItem>
-      <Link className={`nav-link ${window.location.pathname === '/search' && 'active'}`} to="/search">
+      <Link className={`nav-link ${window.location.pathname.startsWith('/rock') && 'active'}`} to="/rocks">
         <i className="icon-magnifier" />
         {' '}
         <span>
-          Skały
+          Szukaj skał
+        </span>
+      </Link>
+    </NavItem>
+    <NavItem>
+      <Link className={`nav-link ${window.location.pathname === '/map' && 'active'}`} to="/map">
+        <i className="icon-map" />
+        {' '}
+        <span>
+          Mapa
         </span>
       </Link>
     </NavItem>
@@ -33,11 +42,11 @@ const SidebarNavItems = () => (
       </Link>
     </NavItem>
     <NavItem>
-      <Link className={`nav-link ${window.location.pathname.startsWith('/recipe') && 'active'}`} to="/recipes">
-        <i className="icon-directions" />
+      <Link className={`nav-link ${window.location.pathname === '/add' && 'active'}`} to="/add">
+        <i className="icon-plus" />
         {' '}
         <span>
-          Dodaj
+          Dodaj treści
         </span>
       </Link>
     </NavItem>

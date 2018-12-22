@@ -84,9 +84,9 @@ class UpdateProfile extends React.Component {
       <div>
         <Row>
           <Col lg={{ size: 6, offset: 3 }}>
-            <Card>
+            <Card className="input-card">
               <CardHeader>
-                Update Profile
+                Edytuj profil
               </CardHeader>
               <CardBody>
                 {!!error && (
@@ -103,7 +103,7 @@ class UpdateProfile extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <Label for="firstName">
-                      First Name
+                      Imię
                     </Label>
                     <Input
                       type="text"
@@ -116,7 +116,7 @@ class UpdateProfile extends React.Component {
                   </FormGroup>
                   <FormGroup>
                     <Label for="lastName">
-                      Last Name
+                      Nazwisko
                     </Label>
                     <Input
                       type="text"
@@ -137,7 +137,7 @@ class UpdateProfile extends React.Component {
                         onChange={this.handleChange}
                       />
                       {' '}
-                      Change my email
+                      Zmień mój mail
                     </Label>
                   </FormGroup>
                   {changeEmail && (
@@ -165,14 +165,14 @@ class UpdateProfile extends React.Component {
                         onChange={this.handleChange}
                       />
                       {' '}
-                      Change my password
+                      Zmień hasło
                     </Label>
                   </FormGroup>
                   {changePassword && (
                     <div>
                       <FormGroup>
                         <Label for="password">
-                          Password
+                          Hasło
                         </Label>
                         <Input
                           type="password"
@@ -185,7 +185,7 @@ class UpdateProfile extends React.Component {
                       </FormGroup>
                       <FormGroup>
                         <Label for="password2">
-                          Confirm Password
+                          Potwierdź hasło
                         </Label>
                         <Input
                           type="password"
@@ -199,7 +199,7 @@ class UpdateProfile extends React.Component {
                     </div>
                   )}
                   <Button style={{ marginTop: 20 }} color="primary">
-                    Update
+                    Zatwierdź
                   </Button>
                 </Form>
               </CardBody>

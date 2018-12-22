@@ -21,9 +21,14 @@ class Member extends Component {
   }
 
   render = () => {
-    const { Layout, member, memberLogout } = this.props;
+    const { Layout, member, memberLogout, children } = this.props;
 
-    return <Layout member={member} logout={memberLogout} />;
+    return (
+      <Layout
+        member={member}
+        logout={memberLogout}
+      />
+    );
   }
 }
 

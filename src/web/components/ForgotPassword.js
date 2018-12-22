@@ -69,9 +69,9 @@ class ForgotPassword extends React.Component {
       <div>
         <Row>
           <Col lg={{ size: 6, offset: 3 }}>
-            <Card>
+            <Card className="input-card">
               <CardHeader>
-                Forgot Password
+                Resetowanie hasła
               </CardHeader>
               <CardBody>
                 {!!error && (
@@ -94,26 +94,25 @@ class ForgotPassword extends React.Component {
                     />
                   </FormGroup>
                   <Button color="primary">
-                    Reset Password
+                    Resetuj hasło
                   </Button>
                 </Form>
 
                 <hr />
 
                 <Row>
-                  <Col sm="6">
-                    Need an account?
+                  <Col sm="7">
+                    Nie masz konta?
                     {' '}
                     <Link to="/sign-up">
-                      Sign Up
+                      Zarejestruj się
                     </Link>
                   </Col>
-                  <Col sm="6" className="text-right">
-                    <Link to="/forgot-password">
-                      Login
+                  <Col sm="5" className="text-right">
+                  Powrót do {' '}
+                    <Link to="/login">
+                      Logowania
                     </Link>
-                    {' '}
-                    to your account.
                   </Col>
                 </Row>
               </CardBody>
