@@ -1,6 +1,6 @@
+import { Firebase, FirebaseRef } from '../lib/firebase';
 import ErrorMessages from '../constants/errors';
 import statusMessage from './status';
-import { Firebase, FirebaseRef } from '../lib/firebase';
 
 /**
   * Sign Up to Firebase
@@ -120,7 +120,7 @@ export function login(formData) {
             if (userDetails.emailVerified === false) {
               Firebase.auth().currentUser
                 .sendEmailVerification()
-                .catch(() => console.log('Verification email failed to send'));
+                .catch(() => console.log('Przesłano email weryfikacyjny'));
             }
 
             // Get User Data
@@ -179,7 +179,7 @@ export function updateProfile(formData) {
   } = formData;
 
   return dispatch => new Promise(async (resolve, reject) => {
-    // Are they a user?
+    // Is it the user?
     const UID = Firebase.auth().currentUser.uid;
     if (!UID) return reject({ message: ErrorMessages.missingFirstName });
 
@@ -213,7 +213,7 @@ export function updateProfile(formData) {
         // Update Redux
         await getUserData(dispatch);
         await statusMessage(dispatch, 'loading', false);
-        return resolve('Profile Updated');
+        return resolve('Profil zaktualizowany');
       }).catch(reject);
   }).catch(async (err) => {
     await statusMessage(dispatch, 'loading', false);

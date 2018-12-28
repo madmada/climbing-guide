@@ -12,9 +12,9 @@ export default function (dispatch, type, val) {
     // Set some defaults for convenience
     let message = val;
     if (!val) {
-      if (type === 'success') message = 'Success';
-      if (type === 'error') message = 'Sorry, an error occurred';
-      if (type === 'info') message = 'Something is happening...';
+      if (type === 'success') message = 'Sukces';
+      if (type === 'error') message = 'Wystąpił problem';
+      if (type === 'info') message = 'Coś się dzieje...';
       if (type === 'loading' && val !== false) message = true;
     }
 

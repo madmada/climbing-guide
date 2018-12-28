@@ -131,7 +131,7 @@
   "rocks" : [ {
     "author" : "Marek Winny",
     "comments" : [ {
-      "authorid" : "BQXEnd7OOAdYZoSBk2OmeiH2MCa2",
+      "author" : "Monia Sroka",
       "comment" : "Oto mój komentarz w tej sprawie.",
       "date" : 1543874536567
     } ],
@@ -144,31 +144,31 @@
         "lat" : 52,
         "lng" : 380
       },
-      "region" : 1
+      "region" : 0
     },
-    "name" : "Skałka",
-    "ratingsum" : 0,
+    "name" : "Olimp",
+    "ratingsum" : 16,
     "rocktype" : 1,
     "routes" : [ {
       "author" : "Adam Mały",
       "gradesum" : 12,
-      "name" : "Poranny WF",
+      "name" : "Podwieczorek",
       "votes" : 2,
-      "year" : 2015
+      "year" : "2015"
     }, {
       "author" : "Tomasz Myszy",
       "gradesum" : 7,
-      "name" : "Tęsknota za szałasem",
+      "name" : "Wajda",
       "votes" : 1,
-      "year" : 2014
+      "year" : "2014"
     } ],
-    "votes" : 0,
+    "votes" : 5
   }, {
     "author" : "Wanda Niewinny",
     "comments" : [ {
-      "authorid" : "BQXEnd7OOAdYZoSBk2OmeiH2MCa2",
+      "author" : "Waldek Bury",
       "comment" : "Oto mój komentarz w tej sprawie.",
-      "date" : 1543874536567
+      "date" : "12.11.2018"
     } ],
     "date" : 1543874536567,
     "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
@@ -179,9 +179,9 @@
         "lat" : 60,
         "lng" : 300
       },
-      "region" : 1
+      "region" : 5
     },
-    "name" : "Skała",
+    "name" : "Forteca",
     "ratingsum" : 0,
     "rocktype" : 1,
     "routes" : [ {
@@ -189,21 +189,27 @@
       "gradesum" : 12,
       "name" : "Poranny WF",
       "votes" : 2,
-      "year" : 2011
+      "year" : "2011"
     }, {
       "author" : "Monika Bębenek",
       "gradesum" : 7,
       "name" : "Tęsknota za szałasem",
       "votes" : 1,
-      "year" : 2014
+      "year" : "2014"
     } ],
     "votes" : 0
   } ],
   "users" : {
     "BQXEnd7OOAdYZoSBk2OmeiH2MCa2" : {
       "firstName" : "Adam",
-      "lastLoggedIn" : 1543874536567,
-      "lastName" : "Pe"
+      "lastLoggedIn" : 1545440845263,
+      "lastName" : "Pałka"
+    },
+    "XMR3ZQhrMQWxNQDX199lzWRsHeM2" : {
+      "firstName" : "Jan",
+      "lastLoggedIn" : 1545863031546,
+      "lastName" : "Murarz",
+      "signedUp" : 1545860636160
     }
   }
 }

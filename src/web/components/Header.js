@@ -70,7 +70,9 @@ class Header extends Component {
               </div>
               <UncontrolledDropdown nav>
                 <DropdownToggle nav caret>
-                  {loggedIn ? 'Moje konto ' : 'Moje konto '}
+                  {loggedIn ? <i className="icon-user" /> : <i className="icon-user-unfollow" />}
+                  {' '}
+                  <span className="hide-desktop">Moje konto</span>
                 </DropdownToggle>
                 <DropdownMenu>
                   {!loggedIn

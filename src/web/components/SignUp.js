@@ -77,7 +77,7 @@ class SignUp extends React.Component {
           <Col lg={{ size: 6, offset: 3 }}>
             <Card className="input-card">
               <CardHeader>
-                Sign Up
+                Rejestracja
               </CardHeader>
               <CardBody>
                 {!!error && (
@@ -88,7 +88,7 @@ class SignUp extends React.Component {
                 <Form onSubmit={this.handleSubmit}>
                   <FormGroup>
                     <Label for="firstName">
-                      First Name
+                      Imię
                     </Label>
                     <Input
                       type="text"
@@ -101,7 +101,7 @@ class SignUp extends React.Component {
                   </FormGroup>
                   <FormGroup>
                     <Label for="lastName">
-                      Last Name
+                      Nazwisko
                     </Label>
                     <Input
                       type="text"
@@ -128,7 +128,7 @@ class SignUp extends React.Component {
                   </FormGroup>
                   <FormGroup>
                     <Label for="password">
-                      Password
+                      Hasło
                     </Label>
                     <Input
                       type="password"
@@ -141,7 +141,7 @@ class SignUp extends React.Component {
                   </FormGroup>
                   <FormGroup>
                     <Label for="password2">
-                      Confirm Password
+                      Potwierdź hasło
                     </Label>
                     <Input
                       type="password"
@@ -153,7 +153,7 @@ class SignUp extends React.Component {
                     />
                   </FormGroup>
                   <Button color="primary">
-                    Sign Up!
+                    Zarejestruj się!
                   </Button>
                 </Form>
 
@@ -161,9 +161,10 @@ class SignUp extends React.Component {
 
                 <Row>
                   <Col sm="12">
-                    Already have an account?
+                    Posiadasz już konto?
+                    {' '}
                     <Link to="/login">
-                      Login
+                      Zaloguj się
                     </Link>
                   </Col>
                 </Row>

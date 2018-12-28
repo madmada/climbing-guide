@@ -16,6 +16,10 @@ import RocksContainer from '../../containers/Rocks';
 import RocksComponent from '../components/RockList';
 import RockViewComponent from '../components/Rock';
 
+
+import AddRockContaier from '../../containers/AddRock';
+import AddRockComponent from '../components/AddContent/AddRock';
+
 import SignUpContainer from '../../containers/SignUp';
 import SignUpComponent from '../components/SignUp';
 
@@ -103,6 +107,14 @@ const Index = () => (
         <TemplateSidebar>
           <RecipesContainer {...props} Layout={RecipeViewComponent} />
         </TemplateSidebar>
+      )}
+    />
+    <Route
+      path="/add"
+      render={props => (
+        <TemplateBlank>
+          <AddRockContaier {...props} Layout={AddRockComponent} />
+        </TemplateBlank>
       )}
     />
     <Route

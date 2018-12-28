@@ -115,7 +115,7 @@ class Login extends React.Component {
                     />
                   </FormGroup>
                   <Button color="primary">
-                    Login
+                    Zaloguj się
                   </Button>
                 </Form>
 

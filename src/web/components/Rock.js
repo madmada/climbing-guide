@@ -59,7 +59,7 @@ const RockView = ({
             {rock.name}
           </h1>
           <p>
-            by
+            autor:
             {' '}
             {rock.author}
           </p>
