@@ -58,30 +58,6 @@ class LocalizationPicker extends React.Component {
 
     return (
       <div>
-        <div className="input-control">
-          <label>Latitude:</label>
-          <input
-            className="input"
-            type="number"
-            step="0.0000001"
-            min={-90}
-            max={90}
-            value={location.latitude}
-            onChange={this.handleLatitudeChange}
-          />
-        </div>
-        <div className="input-control">
-          <label>Longitude:</label>
-          <input
-            className="input"
-            type="number"
-            step={0.0000001}
-            min={-180}
-            max={180}
-            value={location.longitude}
-            onChange={this.handleLongitudeChange}
-          />
-        </div>
         <GoogleMapGeoPicker apiKey={Config.gMapApiKey} value={location} onChange={this.onLocationChange} width={'100%'} />
         <Button onClick={this.handleSubmit} style={{ width: '100%' }}>Zatwierdź</Button>
       </div>

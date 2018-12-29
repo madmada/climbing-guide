@@ -9,6 +9,8 @@ import {
   Label,
   Alert,
   Input,
+  InputGroup,
+  InputGroupAddon,
   Button,
   CardBody,
   FormGroup,
@@ -110,6 +112,40 @@ class AddRock extends React.Component {
     });
   }
 
+  renderAddRoutes = () => (
+    <Row form>
+      <Label for="rock-number" sm={2}>Droga 1:</Label>
+      <Col sm={3}>
+        <FormGroup>
+          <Input type="text" name="name" id="name" placeholder="nazwa" />
+        </FormGroup>
+      </Col>
+      <Col sm={2}>
+        <FormGroup>
+          <Input type="text" name="author" id="author" placeholder="autor" />
+        </FormGroup>
+      </Col>
+      <Col xs={6} sm={2}>
+        <FormGroup>
+          <Input type="text" name="year" id="year" placeholder="rok" />
+        </FormGroup>
+      </Col>
+      <Col xs={6} sm={3}>
+        <FormGroup>
+          <Input type="select" name="grade" id="grade">
+            <option disabled selected>Wycena</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </Input>
+        </FormGroup>
+      </Col>
+    </Row>
+
+
+  );
+
   render() {
     const { loading, error } = this.props;
     const {
@@ -185,29 +221,28 @@ class AddRock extends React.Component {
 
                   <FormGroup>
                     <Label for="image">Lokalizacja</Label>
-                    <Row>
-                      <Col xs={9}>
-                        <Input
-                          type="text"
-                          name="location"
-                          id="location"
-                          value={location.address ? location.address : 'Wybierz na mapie lokalizację skały'}
-                          disabled
-                        />
-                      </Col>
-                      <Col xs={2}>
-                        <Button onClick={this.toggle} style={{ left: '-30px', position: 'relative' }}>
+                    <InputGroup>
+                      <Input
+                        type="text"
+                        name="location"
+                        id="location"
+                        value={location.address ? location.address : 'Wybierz na mapie lokalizację skały'}
+                        disabled
+                      />
+                      <InputGroupAddon addonType="append">
+                        <Button onClick={this.toggle}>
                           <i className="icon-target" />
                           {' '}
                           Mapa
                         </Button>
-                      </Col>
-                    </Row>
+                      </InputGroupAddon>
+                    </InputGroup>
                     <Modal style={{ marginTop: '20vh' }} isOpen={locationPick} toggle={this.toggle}>
                       <ModalHeader toggle={this.toggle}>Wybierz lokalizację</ModalHeader>
                       <LocalizationPicker onSubmit={this.handleLocationPick} />
                     </Modal>
                   </FormGroup>
+                  {this.renderAddRoutes()}
                   <Button color="primary">
                     Dodaj skałę!
                   </Button>
