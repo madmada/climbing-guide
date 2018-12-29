@@ -67,6 +67,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.6.3",
     "react-dom": "^16.3.1",
+    "react-geo-picker": "^0.2.4",
+    "react-geocode": "^0.1.2",
     "react-google-maps": "^9.4.5",
     "react-motion": "^0.5.2",
     "react-native": "~0.55.4",

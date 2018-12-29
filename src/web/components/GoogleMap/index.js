@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import mapStyle from './MapOptions/styles';
+import Config from '../../../constants/config';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Marker = ({ text }) => <div>{text}</div>;
+const apiKey = Config.gMapApiKey;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class GoogleMap extends Component {
@@ -12,7 +14,8 @@ class GoogleMap extends Component {
       <div style={{ height: '100vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{
-            key: '',
+            // do not push
+            key: apiKey,
             language: 'pl',
             ragion: 'pl',
           }}
@@ -22,10 +25,10 @@ class GoogleMap extends Component {
             styles: mapStyle,
           }}
         >
-          <AnyReactComponent
+          <Marker
             lat={52}
             lng={380}
-            text={'Kreyser Avrora'}
+            text={'My marker'}
           />
         </GoogleMapReact>
       </div>

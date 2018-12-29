@@ -39,6 +39,7 @@ export function addNewRock(formData) {
     description,
     author,
     imageUrl,
+    location,
   } = formData;
   let rockExists;
 
@@ -50,6 +51,14 @@ export function addNewRock(formData) {
     votes: 0,
     imageUrl,
     date: Firebase.database.ServerValue.TIMESTAMP,
+    location: {
+      region: location.region,
+      adress: location.address,
+      gps: {
+        latitude: location.latitude,
+        longitude: location.longitude,
+      },
+    },
   };
 
   return dispatch => new Promise(async (resolve, reject) => {
@@ -58,6 +67,7 @@ export function addNewRock(formData) {
     if (!description) return reject({ message: ErrorMessages.missingDescription });
     if (!author) return reject({ message: ErrorMessages.authorizeProblem });
     if (!imageUrl) return reject({ message: ErrorMessages.missingImage });
+    if (!location.region) return reject({ message: 'dodaj lokalizacje' });
 
     const newRockKey = FirebaseRef.child('rocks').push().key;
     rockData.id = newRockKey;

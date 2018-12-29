@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import {
   Row,
   Col,
@@ -19,7 +20,8 @@ import {
   ModalFooter,
   Progress,
 } from 'reactstrap';
-import { Link, withRouter } from 'react-router-dom';
+import Config from '../../../constants/config';
+import LocalizationPicker from '../LocalizationPicker';
 import Loading from '../Loading';
 
 class AddRock extends React.Component {
@@ -49,13 +51,21 @@ class AddRock extends React.Component {
       description: '',
       author: `${props.member.firstName} ${props.member.lastName}` || '',
       imageUploading: false,
+      locationPick: false,
       imageUrl: '',
+      location: {
+        latitude: '',
+        longitude: '',
+        region: '',
+        address: '',
+      },
 
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUploadFile = this.handleUploadFile.bind(this);
+    this.handleLocationPick = this.handleLocationPick.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
@@ -87,9 +97,16 @@ class AddRock extends React.Component {
       .catch(e => console.log(`Error: ${e}`));
   }
 
+  handleLocationPick(loc) {
+    this.toggle();
+    this.setState({
+      location: loc,
+    });
+  }
+
   toggle() {
     this.setState({
-      imageUploading: !this.state.imageUploading,
+      locationPick: !this.state.locationPick,
     });
   }
 
@@ -99,7 +116,8 @@ class AddRock extends React.Component {
       name,
       description,
       imageUploading,
-      progress,
+      locationPick,
+      location,
     } = this.state;
 
     // Loading
@@ -108,7 +126,7 @@ class AddRock extends React.Component {
     return (
       <div>
         <Row>
-          <Col lg={{ size: 6, offset: 3 }}>
+          <Col lg={{ size: 8, offset: 2 }}>
             <Card className="input-card">
               <CardHeader>
                 Dodaj nową skałę
@@ -141,7 +159,7 @@ class AddRock extends React.Component {
                       type="textarea"
                       name="description"
                       id="description"
-                      placeholder="Wpisz dodatkowe informormacje o skale"
+                      placeholder="Wpisz dodatkowe informormacje o skale i drogach wspinaczkowych."
                       value={description}
                       onChange={this.handleChange}
                     />
@@ -155,31 +173,45 @@ class AddRock extends React.Component {
                       accept="image/*"
                       onInput={this.handleUploadFile}
                     />
-                    <Modal style={{ marginTop: '40vh' }} isOpen={imageUploading} toggle={this.toggle}>
+                    <Modal style={{ marginTop: '40vh' }} isOpen={imageUploading}>
                       <Progress bar animated value="100">
-                        Prosimy poczekać, trwa dodawanie zdjęcia...
+                        Prosimy zaczekać, trwa dodawanie zdjęcia...
                       </Progress>
                     </Modal>
                     <FormText color="muted">
-                      Dodaj do bazy zdjęcie skały z naniesionymi drogami.
+                      Dodaj do bazy zdjęcie lub rysunek skały z naniesionymi drogami.
                     </FormText>
+                  </FormGroup>
+
+                  <FormGroup>
+                    <Label for="image">Lokalizacja</Label>
+                    <Row>
+                      <Col xs={9}>
+                        <Input
+                          type="text"
+                          name="location"
+                          id="location"
+                          value={location.address ? location.address : 'Wybierz na mapie lokalizację skały'}
+                          disabled
+                        />
+                      </Col>
+                      <Col xs={2}>
+                        <Button onClick={this.toggle} style={{ left: '-30px', position: 'relative' }}>
+                          <i className="icon-target" />
+                          {' '}
+                          Mapa
+                        </Button>
+                      </Col>
+                    </Row>
+                    <Modal style={{ marginTop: '20vh' }} isOpen={locationPick} toggle={this.toggle}>
+                      <ModalHeader toggle={this.toggle}>Wybierz lokalizację</ModalHeader>
+                      <LocalizationPicker onSubmit={this.handleLocationPick} />
+                    </Modal>
                   </FormGroup>
                   <Button color="primary">
                     Dodaj skałę!
                   </Button>
                 </Form>
-
-                {/* <hr />
-
-                <Row>
-                  <Col sm="12">
-                    Posiadasz już konto?
-                    {' '}
-                    <Link to="/login">
-                      Zaloguj się
-                    </Link>
-                  </Col>
-                </Row> */}
               </CardBody>
             </Card>
           </Col>

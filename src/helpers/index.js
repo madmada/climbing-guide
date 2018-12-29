@@ -17,6 +17,13 @@ export const renderRatingStars = (votes) => {
   return stars;
 };
 
+export const getRegion = (addressComponents) => {
+  let region;
+  addressComponents.map((component) => { component.types[0]==='administrative_area_level_1' && (region = component.long_name)});
+  const str = region.replace(/Województwo /g, '');
+  return str;
+}
+
 export const timestampToDate = (timestamp) => {
   const newDate = new Date(timestamp);
   const stringDate = newDate.toLocaleDateString('pl-PL');

@@ -23,7 +23,7 @@ body {
 }
 
 .input-card {
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-bottom: 10vh;
 }
 
@@ -56,6 +56,16 @@ body {
   @media screen and (min-width: 600px) {
     display: none;
   }
+}
+
+// center marker on location pick
+.Marker {
+  top: 44%;
+}
+
+// Place list on google maps set visible in modal
+.pac-container {
+  z-index: 1051 !important;
 }
 
 /**
