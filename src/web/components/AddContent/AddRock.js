@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import update from 'react-addons-update';
+import { Link, withRouter } from 'react-router-dom';
 import {
   Row,
   Col,
@@ -18,13 +19,13 @@ import {
   FormText,
   Modal,
   ModalHeader,
-  ModalBody,
-  ModalFooter,
   Progress,
 } from 'reactstrap';
-import Config from '../../../constants/config';
 import LocalizationPicker from '../LocalizationPicker';
 import Loading from '../Loading';
+import { scrollTop } from '../../../helpers';
+import scale from '../../../constants/cracowScale';
+import rockTypes from '../../../constants/rockTypes';
 
 class AddRock extends React.Component {
   static propTypes = {
@@ -51,6 +52,7 @@ class AddRock extends React.Component {
     this.state = {
       name: '',
       description: '',
+      rockType: '',
       author: `${props.member.firstName} ${props.member.lastName}` || '',
       imageUploading: false,
       locationPick: false,
@@ -61,13 +63,21 @@ class AddRock extends React.Component {
         region: '',
         address: '',
       },
-
+      routes: [{
+        name: '',
+        author: '',
+        year: '',
+        gradesum: '',
+        votes: 1,
+      }],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleUploadFile = this.handleUploadFile.bind(this);
     this.handleLocationPick = this.handleLocationPick.bind(this);
+    this.handleRouteChange = this.handleRouteChange.bind(this);
+    this.handleAddNewRoute = this.handleAddNewRoute.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
@@ -77,18 +87,58 @@ class AddRock extends React.Component {
     });
   }
 
-  handleUploadFile = (event) => {
-    const { onImageUpload } = this.props;
-    // const modal = event.target.files[0] !== 'undefined';
+  handleRouteChange = (event) => {
+    const grade = event.target.name === 'grade' && Object.values(scale).findIndex(value => value === event.target.value);
+    if (grade) {
+      this.setState({
+        routes: update(this.state.routes, { [event.target.tabIndex]: { gradesum: { $set: grade } } }),
+      });
+    }
+    else {
+      this.setState({
+        routes: update(this.state.routes, { [event.target.tabIndex]: { [event.target.name]: { $set: event.target.value } } }),
+      });
+    }
+  }
+
+  handleAddNewRoute = () => {
+    const { routes } = this.state;
+    const newRoute = {
+      name: '',
+      author: '',
+      year: '',
+      gradesum: '',
+      votes: 1,
+    };
+    const newRoutes = routes;
+    newRoutes.push(newRoute);
     this.setState({
-      imageUploading: true,
+      routes: newRoutes,
     });
-    onImageUpload(event.target.files[0])
-      .then((url) => {
-        this.setState({ imageUploading: false, imageUrl: url });
-        console.log('url zdjecia: ', url);
-      })
-      .catch(e => this.setState({ imageUploading: false }));
+  }
+
+  handleRemoveRoute = (index) => {
+    const { routes } = this.state;
+    const newRoutes = routes;
+    newRoutes.splice(index, 1);
+    this.setState({
+      routes: newRoutes,
+    });
+  }
+
+  handleUploadFile = (event) => {
+    if (event.target.files.length !== 0) {
+      const { onImageUpload } = this.props;
+      this.setState({
+        imageUploading: true,
+      });
+      onImageUpload(event.target.files[0])
+        .then((url) => {
+          this.setState({ imageUploading: false, imageUrl: url });
+          console.log('url zdjecia: ', url);
+        })
+        .catch(e => this.setState({ imageUploading: false }));
+    }
   }
 
   handleSubmit = (event) => {
@@ -96,7 +146,10 @@ class AddRock extends React.Component {
     const { onFormSubmit, history } = this.props;
     onFormSubmit(this.state)
       .then(() => history.push('/')) // href ----> nowej skały
-      .catch(e => console.log(`Error: ${e}`));
+      .catch((e) => {
+        console.log(`Error: ${e}`);
+        scrollTop();
+      });
   }
 
   handleLocationPick(loc) {
@@ -112,40 +165,6 @@ class AddRock extends React.Component {
     });
   }
 
-  renderAddRoutes = () => (
-    <Row form>
-      <Label for="rock-number" sm={2}>Droga 1:</Label>
-      <Col sm={3}>
-        <FormGroup>
-          <Input type="text" name="name" id="name" placeholder="nazwa" />
-        </FormGroup>
-      </Col>
-      <Col sm={2}>
-        <FormGroup>
-          <Input type="text" name="author" id="author" placeholder="autor" />
-        </FormGroup>
-      </Col>
-      <Col xs={6} sm={2}>
-        <FormGroup>
-          <Input type="text" name="year" id="year" placeholder="rok" />
-        </FormGroup>
-      </Col>
-      <Col xs={6} sm={3}>
-        <FormGroup>
-          <Input type="select" name="grade" id="grade">
-            <option disabled selected>Wycena</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </Input>
-        </FormGroup>
-      </Col>
-    </Row>
-
-
-  );
-
   render() {
     const { loading, error } = this.props;
     const {
@@ -154,7 +173,47 @@ class AddRock extends React.Component {
       imageUploading,
       locationPick,
       location,
+      routes,
     } = this.state;
+
+    const renderScale = Object.values(scale).map(item => <option>{item}</option>);
+
+    const addRoutes = routes.map((item, index) => (
+      <Fragment>
+        <Row form key={index}>
+          <Label for="rock-number" sm={1}>{index + 1}:</Label>
+          <Col sm={3}>
+            <FormGroup>
+              <Input type="text" name="name" id={`name-${index}`} tabIndex={index} value={routes.name} placeholder="nazwa" onChange={this.handleRouteChange} />
+            </FormGroup>
+          </Col>
+          <Col sm={3}>
+            <FormGroup>
+              <Input type="text" name="author" id={`author-${index}`} tabIndex={index} value={routes.author} placeholder="autor" onChange={this.handleRouteChange} />
+            </FormGroup>
+          </Col>
+          <Col xs={6} sm={2}>
+            <FormGroup>
+              <Input type="select" name="grade" id={`grade-${index}`} tabIndex={index} onChange={this.handleRouteChange} defaultValue="Wycena">
+                <option disabled>Wycena</option>
+                {renderScale}
+              </Input>
+            </FormGroup>
+          </Col>
+          <Col xs={4} sm={2}>
+            <FormGroup>
+              <Input type="number" name="year" id={`year-${index}`} tabIndex={index} value={routes.year} placeholder="rok" onChange={this.handleRouteChange} />
+            </FormGroup>
+          </Col>
+          <Col xs={1} sm={1}>
+            <Button onClick={() => this.handleRemoveRoute(index)}>
+              <i className="fa fa-trash-o" aria-hidden="true" />
+            </Button>
+          </Col>
+        </Row>
+        <hr />
+      </Fragment>
+    ));
 
     // Loading
     if (loading) return <Loading />;
@@ -163,7 +222,7 @@ class AddRock extends React.Component {
       <div>
         <Row>
           <Col lg={{ size: 8, offset: 2 }}>
-            <Card className="input-card">
+            <Card className="input-card" id="add-rock">
               <CardHeader>
                 Dodaj nową skałę
               </CardHeader>
@@ -201,6 +260,13 @@ class AddRock extends React.Component {
                     />
                   </FormGroup>
                   <FormGroup>
+                    <Label for="rockType">Rodzaj skały</Label>
+                    <Input type="select" name="rockType" id="rockType" onChange={this.handleChange} defaultValue="Wybierz rodzaj">
+                      <option disabled>Wybierz rodzaj</option>
+                      {rockTypes.map(item => <option>{item}</option>)}
+                    </Input>
+                  </FormGroup>
+                  <FormGroup>
                     <Label for="image">Skałoplan</Label>
                     <Input
                       type="file"
@@ -218,7 +284,6 @@ class AddRock extends React.Component {
                       Dodaj do bazy zdjęcie lub rysunek skały z naniesionymi drogami.
                     </FormText>
                   </FormGroup>
-
                   <FormGroup>
                     <Label for="image">Lokalizacja</Label>
                     <InputGroup>
@@ -242,7 +307,16 @@ class AddRock extends React.Component {
                       <LocalizationPicker onSubmit={this.handleLocationPick} />
                     </Modal>
                   </FormGroup>
-                  {this.renderAddRoutes()}
+                  <FormGroup>
+                    <Label for="routes">Drogi</Label>
+                    <hr style={{ marginTop: '0' }} />
+                    {addRoutes}
+                    <FormText color="muted" onClick={this.handleAddNewRoute} style={{ cursor: 'pointer' }}>
+                      <i className="fa fa-plus" aria-hidden="true" />
+                      {' '}
+                      Dodaj kolejną drogę
+                    </FormText>
+                  </FormGroup>
                   <Button color="primary">
                     Dodaj skałę!
                   </Button>

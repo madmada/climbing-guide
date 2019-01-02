@@ -1,7 +1,7 @@
-export default {
-  0: 'Granit',
-  1: 'Wapień',
-  2: 'Piaskowiec',
-  3: 'Zlepienieć',
-  4: 'Andezyt',
-};
+export default [
+  'Granit',
+  'Wapień',
+  'Piaskowiec',
+  'Zlepieniec',
+  'Andezyt',
+];

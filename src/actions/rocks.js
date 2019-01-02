@@ -1,3 +1,5 @@
+
+import _ from 'lodash';
 import { Firebase, FirebaseRef } from '../lib/firebase';
 import ErrorMessages from '../constants/errors';
 import statusMessage from './status';
@@ -38,15 +40,20 @@ export function addNewRock(formData) {
     name,
     description,
     author,
+    rockType,
     imageUrl,
     location,
+    routes,
   } = formData;
   let rockExists;
+  let emptyInput = [];
+  let routeIndex;
 
   const rockData = {
     name,
     description,
     author,
+    rockType,
     ratingsum: 0,
     votes: 0,
     imageUrl,
@@ -59,22 +66,40 @@ export function addNewRock(formData) {
         longitude: location.longitude,
       },
     },
+    routes: routes,
   };
 
   return dispatch => new Promise(async (resolve, reject) => {
     // Validation checks
     if (!name) return reject({ message: ErrorMessages.missingRockName });
     if (!description) return reject({ message: ErrorMessages.missingDescription });
+    if (!rockType) return reject({ message: ErrorMessages.missingRockType });
     if (!author) return reject({ message: ErrorMessages.authorizeProblem });
     if (!imageUrl) return reject({ message: ErrorMessages.missingImage });
-    if (!location.region) return reject({ message: 'dodaj lokalizacje' });
+    if (!location.region) return reject({ message: ErrorMessages.missingLocation });
+    if (routes.length === 0) return reject({ message: ErrorMessages.missingRoutes });
 
-    const newRockKey = FirebaseRef.child('rocks').push().key;
+    await new Promise((res) => {
+      routes.slice(0).reverse().map((item, index) => {
+        const tmp = [];
+        const reverseIndex = routes.length - index;
+        if (item.name === '') tmp.push(' nazwa');
+        if (item.author === '') tmp.push(' autor');
+        if (item.gradesum === '') tmp.push(' wycena');
+        if (item.year === '') tmp.push(' rok');
+        if (tmp.length > 0) {
+          emptyInput = tmp;
+          routeIndex = reverseIndex;
+        }
+        res();
+      });
+    });
+    if (emptyInput.length > 0) return reject({ message: `Uzupełnij pole: ${emptyInput} w drodze nr: ${routeIndex}` });
+
+    const newRockKey = _.kebabCase(rockData.name);
     rockData.id = newRockKey;
 
-    // await addRockImage(image, newRockKey);
-
-    await FirebaseRef.child('rocks').orderByChild('name').equalTo(name).once('value', (snapshot) => {
+    await FirebaseRef.child('rocks').orderByChild('id').equalTo(newRockKey).once('value', (snapshot) => {
       if (snapshot.exists()) {
         rockExists = true;
       } else {

@@ -20,6 +20,10 @@ export default {
   rockExists: 'Skała o podanej nazwie już istnieje',
   missingImage: 'Proszę dodać skałoplan',
   rockImageExists: 'Zdjęcie już znajduje się w bazie',
+  missingLocation: 'Brakujące pole: Lokalizacja',
+  missingRoutes: 'Proszę dodać drogi',
+  emptyInputRoutes: 'Uzupełnij puste pola: Drogi',
+  missingRockType: 'Brakujące pole: Rodzaj skały',
 
   // Recipes
   recipe404: 'Recipe not found',

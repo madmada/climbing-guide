@@ -7,7 +7,6 @@ import {
 } from 'reactstrap';
 import { Redirect } from 'react-router';
 import rockTypes from '../../constants/rockTypes';
-import regionTypes from '../../constants/regionTypes';
 import { renderRatingStars, getRate, timestampToDate } from '../../helpers';
 import Error from './Error';
 
@@ -32,7 +31,6 @@ class RockListing extends React.Component {
   }
 
   handleRowClick = (id) => {
-    console.log('klikłem się');
     this.setState({
       redirect: true,
       link: `/rock/${id}`,
@@ -40,7 +38,7 @@ class RockListing extends React.Component {
   }
 
   render() {
-    const { error, loading, rocks  } = this.props;
+    const { error, loading, rocks } = this.props;
 
     if (this.state.redirect) return <Redirect push to={this.state.link} />;
 
@@ -48,7 +46,7 @@ class RockListing extends React.Component {
 
       <tr onClick={() => this.handleRowClick(item.id)}>
         <th scope="row">{item.name}</th>
-        <td>{regionTypes[item.localization.region]}</td>
+        {/* <td>{regionTypes[item.localization.region]}</td> */}
         <td>{rockTypes[item.rocktype]}</td>
         <td>{timestampToDate(item.date)}</td>
         <td>{item.ratingsum === 0 ? ('Brak ocen') : (renderRatingStars(getRate(item.ratingsum, item.votes)))}</td>

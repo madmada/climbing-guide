@@ -35,3 +35,8 @@ export const setDate = (day, month, year) => {
   const newDate = new Date(year, month - 1, day).toLocaleDateString('pl-PL');
   return newDate;
 };
+
+export const scrollTop = () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
