@@ -24,6 +24,7 @@ export default {
   missingRoutes: 'Proszę dodać drogi',
   emptyInputRoutes: 'Uzupełnij puste pola: Drogi',
   missingRockType: 'Brakujące pole: Rodzaj skały',
+  rock404: 'Nie znaleziono podanej skały',
 
   // Recipes
   recipe404: 'Recipe not found',

@@ -128,77 +128,608 @@
     "slug" : "text-but-also",
     "title" : "Text But also"
   } ],
-  "rocks" : [ {
-    "author" : "Marek Winny",
-    "comments" : [ {
-      "author" : "Monia Sroka",
-      "comment" : "Oto mój komentarz w tej sprawie.",
-      "date" : 1543874536567
-    } ],
-    "date" : 1543874536567,
-    "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "id" : 0,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-2.jpg?alt=media&token=6ed1740b-529b-4772-9a92-615e92b544b2",
-    "localization" : {
-      "gps" : {
-        "lat" : 52,
-        "lng" : 380
+  "rocks" : {
+    "barylka" : {
+      "author" : "Marek Cisek",
+      "date" : 1546436333327,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "barylka",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDmC-qaIQksR38QCnB%2Forlik-topo.jpg?alt=media&token=4bac0fa5-cd3c-4c67-8ded-63bda0193d09",
+      "location" : {
+        "adress" : "Unnamed Road, 27-530, Polska",
+        "gps" : {
+          "latitude" : 50.93433439692602,
+          "longitude" : 21.600011016969475
+        },
+        "region" : "świętokrzyskie"
       },
-      "region" : 0
+      "name" : "Baryłka",
+      "ratingsum" : 0,
+      "rockType" : "Granit",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "kasza manna",
+        "votes" : 1,
+        "year" : "2011"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 17,
+        "name" : "król lew",
+        "votes" : 1,
+        "year" : "2011"
+      } ],
+      "votes" : 0
     },
-    "name" : "Olimp",
-    "ratingsum" : 16,
-    "rocktype" : 1,
-    "routes" : [ {
-      "author" : "Adam Mały",
-      "gradesum" : 12,
-      "name" : "Podwieczorek",
-      "votes" : 2,
-      "year" : "2015"
-    }, {
-      "author" : "Tomasz Myszy",
-      "gradesum" : 7,
-      "name" : "Wajda",
-      "votes" : 1,
-      "year" : "2014"
-    } ],
-    "votes" : 5
-  }, {
-    "author" : "Wanda Niewinny",
-    "comments" : [ {
-      "author" : "Waldek Bury",
-      "comment" : "Oto mój komentarz w tej sprawie.",
-      "date" : "12.11.2018"
-    } ],
-    "date" : 1543874536567,
-    "description" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "id" : 1,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-2.jpg?alt=media&token=6ed1740b-529b-4772-9a92-615e92b544b2",
-    "localization" : {
-      "gps" : {
-        "lat" : 60,
-        "lng" : 300
+    "bryla" : {
+      "author" : "Marek Cisek",
+      "date" : 1546435877134,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "bryla",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkSmYvdgo4D-CBc95%2Forlik-topo.jpg?alt=media&token=af6d79c6-c686-4cd5-b0e3-b020f905ca7c",
+      "location" : {
+        "adress" : "Żary, Polska",
+        "gps" : {
+          "latitude" : 50.164472354392345,
+          "longitude" : 19.709588207812438
+        },
+        "region" : "małopolskie"
       },
-      "region" : 5
+      "name" : "Bryła",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "cienki mur",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 0
     },
-    "name" : "Forteca",
-    "ratingsum" : 0,
-    "rocktype" : 1,
-    "routes" : [ {
-      "author" : "Karol Rej",
-      "gradesum" : 12,
-      "name" : "Poranny WF",
-      "votes" : 2,
-      "year" : "2011"
-    }, {
-      "author" : "Monika Bębenek",
-      "gradesum" : 7,
-      "name" : "Tęsknota za szałasem",
-      "votes" : 1,
-      "year" : "2014"
-    } ],
-    "votes" : 0
-  } ],
+    "kolano" : {
+      "author" : "Marek Cisek",
+      "date" : 1545440845263,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "kolano",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhq9ftvo2EeVrNC7z%2Forlik-topo.jpg?alt=media&token=6b451b5d-80d6-460d-8fd6-3442bdf6fefa",
+      "location" : {
+        "adress" : "Zakazana, Polska",
+        "gps" : {
+          "latitude" : 50.210195435856384,
+          "longitude" : 18.418694653124938
+        },
+        "region" : "śląskie"
+      },
+      "name" : "Kolano",
+      "ratingsum" : 0,
+      "rockType" : "Wapień",
+      "routes" : [ {
+        "author" : "W. Skrok",
+        "gradesum" : 17,
+        "name" : "zakazana",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "W. Skrok",
+        "gradesum" : 15,
+        "name" : "ciekawy młokos",
+        "votes" : 1,
+        "year" : "2016"
+      } ],
+      "votes" : 0
+    },
+    "mala-skala" : {
+      "author" : "Marek Cisek",
+      "date" : 1545440845263,
+      "description" : "Niewielka skała z łatwymi drogami. Teren leśny.",
+      "id" : "mala-skala",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBR0Pp2XzjZiWVybfu%2Forlik-topo.jpg?alt=media&token=b54fba77-3184-4eb4-b797-13d4bb622c1c",
+      "location" : {
+        "adress" : "Pod Sokolicą 121, 32-089 Będkowice, Polska",
+        "gps" : {
+          "latitude" : 50.172981,
+          "longitude" : 19.740790100000027
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Mała Skała",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "K. Mędrek",
+        "gradesum" : 6,
+        "name" : "Wyciek",
+        "votes" : 1,
+        "year" : "2010"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 12,
+        "name" : "Korek",
+        "votes" : 1,
+        "year" : "2010"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 18,
+        "name" : "Wanda",
+        "votes" : 1,
+        "year" : "2011"
+      } ],
+      "votes" : 0
+    },
+    "masywne-granie" : {
+      "author" : "Marek Cisek",
+      "date" : 1546398798572,
+      "description" : "Lorem ipsum dolor sit amet, blandit reprimique adversarium mel ut. Mucius doctus recusabo id nam, ei choro perfecto corrumpit ius. Pri erat efficiendi te, ei quo dico omnes fierent. An sit consulatu sadipscing. Ei epicurei theophrastus pro, eirmod consequat et ius, habemus consequuntur eos in. Has laboramus tincidunt delicatissimi ut, id labores legimus sadipscing has. Ut tritani viderer sea.",
+      "id" : "masywne-granie",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBY685AF7v68B_muG8%2Forlik-topo.jpg?alt=media&token=822dee2b-c70a-4eed-9959-d2f38428cea3",
+      "location" : {
+        "adress" : "Unnamed Road, 32-241, Polska",
+        "gps" : {
+          "latitude" : 50.48711041605844,
+          "longitude" : 20.006219067187438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Masywne Granie",
+      "ratingsum" : 0,
+      "rockType" : "Granit",
+      "routes" : [ {
+        "author" : "K. Mędrek",
+        "gradesum" : 16,
+        "name" : "Młynek",
+        "votes" : 1,
+        "year" : "2012"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 18,
+        "name" : "Kubek",
+        "votes" : 1,
+        "year" : "2012"
+      } ],
+      "votes" : 0
+    },
+    "orlik" : {
+      "author" : "Marek Cisek",
+      "date" : 1546436565056,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "orlik",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDn-TcpuAnq3rOrIiT%2Forlik-topo.jpg?alt=media&token=e6270c21-fa7e-48c5-b33d-412989448d5a",
+      "location" : {
+        "adress" : "Unnamed Road, 32-540, Polska",
+        "gps" : {
+          "latitude" : 50.227769581517485,
+          "longitude" : 19.478875317187438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Orlik",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 19,
+        "name" : "walka o gniazdo",
+        "votes" : 1,
+        "year" : "2014"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 16,
+        "name" : "kaczka dziwaczka",
+        "votes" : 1,
+        "year" : "2014"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 13,
+        "name" : "ciekły azot",
+        "votes" : 1,
+        "year" : "2014"
+      } ],
+      "votes" : 0
+    },
+    "piaskowa" : {
+      "author" : "Marek Cisek",
+      "date" : 1546436007737,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "piaskowa",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkyZX7iyF18o3xyVZ%2Forlik-topo.jpg?alt=media&token=ffbd5962-d33e-4a2a-a410-e86d7aaa58f2",
+      "location" : {
+        "adress" : "Unnamed Road, 43-600 Jaworzno, Polska",
+        "gps" : {
+          "latitude" : 50.220740700153065,
+          "longitude" : 19.434930004687438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Piaskowa",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "czerwona",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 11,
+        "name" : "niebieska",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 23,
+        "name" : "czarna",
+        "votes" : 1,
+        "year" : "2016"
+      } ],
+      "votes" : 0
+    },
+    "ponura-wydma" : {
+      "author" : "Marek Cisek",
+      "date" : 1546435068565,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "ponura-wydma",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhIRXJUXW36sbR_-F%2Forlik-topo.jpg?alt=media&token=232100cc-da90-4de9-836a-d3d79142e551",
+      "location" : {
+        "adress" : "Unnamed Road, Polska",
+        "gps" : {
+          "latitude" : 51.291014765204615,
+          "longitude" : 17.358513989062438
+        },
+        "region" : "dolnośląskie"
+      },
+      "name" : "Ponura Wydma",
+      "ratingsum" : 0,
+      "rockType" : "Zlepieniec",
+      "routes" : [ {
+        "author" : "M. Jakubiak",
+        "gradesum" : 6,
+        "name" : "wąs rogacza",
+        "votes" : 1,
+        "year" : "2015"
+      }, {
+        "author" : "M. Jakubiak",
+        "gradesum" : 15,
+        "name" : "ostra róża",
+        "votes" : 1,
+        "year" : "2015"
+      } ],
+      "votes" : 0
+    },
+    "sarnia-skala" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "sarnia-skala",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDjB0XoeOlAtCD4zQU%2Forlik-topo.jpg?alt=media&token=7c988deb-115d-44a0-beb0-b74b4982d19b",
+      "location" : {
+        "adress" : "DW791, Polska",
+        "gps" : {
+          "latitude" : 50.18558075451216,
+          "longitude" : 19.500847973437438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Sarnia Skała",
+      "ratingsum" : 0,
+      "rockType" : "Andezyt",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 17,
+        "name" : "mała rysa",
+        "votes" : 1,
+        "year" : "2013"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 20,
+        "name" : "duża rysa",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 0
+    },
+    "tlumik" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "tlumik",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDmC-qaIQksR38QCnB%2Forlik-topo.jpg?alt=media&token=4bac0fa5-cd3c-4c67-8ded-63bda0193d09",
+      "location" : {
+        "adress" : "Unnamed Road, 27-530, Polska",
+        "gps" : {
+          "latitude" : 50.93433439692602,
+          "longitude" : 21.600011016969475
+        },
+        "region" : "świętokrzyskie"
+      },
+      "name" : "Tłumik",
+      "ratingsum" : 0,
+      "rockType" : "Granit",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "kasza manna",
+        "votes" : 1,
+        "year" : "2011"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 17,
+        "name" : "król lew",
+        "votes" : 1,
+        "year" : "2011"
+      } ],
+      "votes" : 0
+    },
+    "kowal" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "kowal",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkSmYvdgo4D-CBc95%2Forlik-topo.jpg?alt=media&token=af6d79c6-c686-4cd5-b0e3-b020f905ca7c",
+      "location" : {
+        "adress" : "Żary, Polska",
+        "gps" : {
+          "latitude" : 50.164472354392345,
+          "longitude" : 19.709588207812438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Kowal",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "cienki mur",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 0
+    },
+    "tempa-burza" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "tempa-burza",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhq9ftvo2EeVrNC7z%2Forlik-topo.jpg?alt=media&token=6b451b5d-80d6-460d-8fd6-3442bdf6fefa",
+      "location" : {
+        "adress" : "Zakazana, Polska",
+        "gps" : {
+          "latitude" : 50.210195435856384,
+          "longitude" : 18.418694653124938
+        },
+        "region" : "śląskie"
+      },
+      "name" : "Tempa Burza",
+      "ratingsum" : 0,
+      "rockType" : "Wapień",
+      "routes" : [ {
+        "author" : "W. Skrok",
+        "gradesum" : 17,
+        "name" : "zakazana",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "W. Skrok",
+        "gradesum" : 15,
+        "name" : "ciekawy młokos",
+        "votes" : 1,
+        "year" : "2016"
+      } ],
+      "votes" : 0
+    },
+    "dawna-skala" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Niewielka skała z łatwymi drogami. Teren leśny.",
+      "id" : "dawna-skala",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBR0Pp2XzjZiWVybfu%2Forlik-topo.jpg?alt=media&token=b54fba77-3184-4eb4-b797-13d4bb622c1c",
+      "location" : {
+        "adress" : "Pod Sokolicą 121, 32-089 Będkowice, Polska",
+        "gps" : {
+          "latitude" : 50.172981,
+          "longitude" : 19.740790100000027
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Dawna Skała",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "K. Mędrek",
+        "gradesum" : 6,
+        "name" : "Wyciek",
+        "votes" : 1,
+        "year" : "2010"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 12,
+        "name" : "Korek",
+        "votes" : 1,
+        "year" : "2010"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 18,
+        "name" : "Wanda",
+        "votes" : 1,
+        "year" : "2011"
+      } ],
+      "votes" : 0
+    },
+    "męskie-granie" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, blandit reprimique adversarium mel ut. Mucius doctus recusabo id nam, ei choro perfecto corrumpit ius. Pri erat efficiendi te, ei quo dico omnes fierent. An sit consulatu sadipscing. Ei epicurei theophrastus pro, eirmod consequat et ius, habemus consequuntur eos in. Has laboramus tincidunt delicatissimi ut, id labores legimus sadipscing has. Ut tritani viderer sea.",
+      "id" : "męskie-granie",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBY685AF7v68B_muG8%2Forlik-topo.jpg?alt=media&token=822dee2b-c70a-4eed-9959-d2f38428cea3",
+      "location" : {
+        "adress" : "Unnamed Road, 32-241, Polska",
+        "gps" : {
+          "latitude" : 50.48711041605844,
+          "longitude" : 20.006219067187438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Męskie Granie",
+      "ratingsum" : 0,
+      "rockType" : "Granit",
+      "routes" : [ {
+        "author" : "K. Mędrek",
+        "gradesum" : 16,
+        "name" : "Młynek",
+        "votes" : 1,
+        "year" : "2012"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 18,
+        "name" : "Kubek",
+        "votes" : 1,
+        "year" : "2012"
+      } ],
+      "votes" : 0
+    },
+    "orzel" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "orzel",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDn-TcpuAnq3rOrIiT%2Forlik-topo.jpg?alt=media&token=e6270c21-fa7e-48c5-b33d-412989448d5a",
+      "location" : {
+        "adress" : "Unnamed Road, 32-540, Polska",
+        "gps" : {
+          "latitude" : 50.227769581517485,
+          "longitude" : 19.478875317187438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Orzeł",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 19,
+        "name" : "walka o gniazdo",
+        "votes" : 1,
+        "year" : "2014"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 16,
+        "name" : "kaczka dziwaczka",
+        "votes" : 1,
+        "year" : "2014"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 13,
+        "name" : "ciekły azot",
+        "votes" : 1,
+        "year" : "2014"
+      } ],
+      "votes" : 0
+    },
+    "terenowa" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "terenowa",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkyZX7iyF18o3xyVZ%2Forlik-topo.jpg?alt=media&token=ffbd5962-d33e-4a2a-a410-e86d7aaa58f2",
+      "location" : {
+        "adress" : "Unnamed Road, 43-600 Jaworzno, Polska",
+        "gps" : {
+          "latitude" : 50.220740700153065,
+          "longitude" : 19.434930004687438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Terenowa",
+      "ratingsum" : 0,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "czerwona",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 11,
+        "name" : "niebieska",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 23,
+        "name" : "czarna",
+        "votes" : 1,
+        "year" : "2016"
+      } ],
+      "votes" : 0
+    },
+    "murowana" : {
+      "author" : "Marek Cisek",
+      "date" : 1545440845263,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "murowana",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhIRXJUXW36sbR_-F%2Forlik-topo.jpg?alt=media&token=232100cc-da90-4de9-836a-d3d79142e551",
+      "location" : {
+        "adress" : "Unnamed Road, Polska",
+        "gps" : {
+          "latitude" : 51.291014765204615,
+          "longitude" : 17.358513989062438
+        },
+        "region" : "dolnośląskie"
+      },
+      "name" : "Murowana",
+      "ratingsum" : 0,
+      "rockType" : "Zlepieniec",
+      "routes" : [ {
+        "author" : "M. Jakubiak",
+        "gradesum" : 6,
+        "name" : "wąs rogacza",
+        "votes" : 1,
+        "year" : "2015"
+      }, {
+        "author" : "M. Jakubiak",
+        "gradesum" : 15,
+        "name" : "ostra róża",
+        "votes" : 1,
+        "year" : "2015"
+      } ],
+      "votes" : 0
+    },
+    "kamieniolom" : {
+      "author" : "Marek Cisek",
+      "date" : 1545440845263,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "kamieniolom",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDjB0XoeOlAtCD4zQU%2Forlik-topo.jpg?alt=media&token=7c988deb-115d-44a0-beb0-b74b4982d19b",
+      "location" : {
+        "adress" : "DW791, Polska",
+        "gps" : {
+          "latitude" : 50.18558075451216,
+          "longitude" : 19.500847973437438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Kamieniołom",
+      "ratingsum" : 0,
+      "rockType" : "Andezyt",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 17,
+        "name" : "mała rysa",
+        "votes" : 1,
+        "year" : "2013"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 20,
+        "name" : "duża rysa",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 0
+    }
+  },
   "users" : {
     "BQXEnd7OOAdYZoSBk2OmeiH2MCa2" : {
       "firstName" : "Adam",
@@ -206,9 +737,9 @@
       "lastName" : "Pałka"
     },
     "XMR3ZQhrMQWxNQDX199lzWRsHeM2" : {
-      "firstName" : "Jan",
-      "lastLoggedIn" : 1545863031546,
-      "lastName" : "Murarz",
+      "firstName" : "Marek",
+      "lastLoggedIn" : 1546356424934,
+      "lastName" : "Cisek",
       "signedUp" : 1545860636160
     }
   }

@@ -3,7 +3,6 @@ import _ from 'lodash';
 import { Firebase, FirebaseRef } from '../lib/firebase';
 import ErrorMessages from '../constants/errors';
 import statusMessage from './status';
-import { addRockImage } from './storage';
 
 /**
   * Set an Error Message
@@ -18,10 +17,10 @@ export function setError(message) {
 /**
   * Get Rocks
   */
-export function getRocks() {
+export function getAllRocks() {
   if (Firebase === null) return () => new Promise(resolve => resolve());
 
-  return dispatch => new Promise(resolve => FirebaseRef.child('rocks')
+  return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('name')
     .on('value', (snapshot) => {
       const rocks = snapshot.val() || [];
 
@@ -31,6 +30,20 @@ export function getRocks() {
       }));
     })).catch(e => console.log(e));
 }
+
+// export function getRocksByName() {
+//   if (Firebase === null) return () => new Promise(resolve => resolve());
+
+//   return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('name').startAt('B').endAt('B\uf8ff')
+//     .on('value', (snapshot) => {
+//       const rocks = snapshot.val() || [];
+
+//       return resolve(dispatch({
+//         type: 'ROCKS_REPLACE',
+//         data: rocks,
+//       }));
+//     })).catch(e => console.log(e));
+// }
 
 /**
   * Add new rock to Firebase

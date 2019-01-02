@@ -6,7 +6,7 @@ export const getRate = (ratesum, votes) => Math.round(votes < 1 ? 0 : (ratesum /
 
 export const renderRatingStars = (votes) => {
   const emptyStars = 5 - votes;
-  const filledStars = votes;
+  const filledStars = votes > 5 ? 5 : votes;
   const stars = [];
   for (let i = 0; i < filledStars; i += 1) {
     stars.push(<span className="fa fa-star" style={{ color: 'orange' }} key={i} />);

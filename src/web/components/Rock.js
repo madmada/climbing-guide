@@ -30,23 +30,23 @@ const RockView = ({
   // Get this Rock from all rocks
   let rock = null;
   if (rockId && rocks) {
-    rock = rocks.find(item => parseInt(item.id, 10) === parseInt(rockId, 10));
+    rock = Object.values(rocks).find(item => item.id === rockId);
   }
 
   // Rock not found
-  if (!rock) return <Error content={ErrorMessages.recipe404} />;
+  if (!rock) return <Error content={ErrorMessages.rock404} />;
 
   // Build Ingredients listing
-  const comments = rock.comments.map(item => (
-    <ListGroupItem key={`${item}`}>
+  const comments = rock.comments ? rock.comments.map((item, index) => (
+    <ListGroupItem key={`comment-${index}`}>
       {item.author}
       {': '}
       {item.comment}
     </ListGroupItem>
-  ));
+  )) : <ListGroupItem>Brak komentarzy</ListGroupItem>;
 
   const routes = rock.routes.map(item => (
-    <ListGroupItem key={`${item}`}>
+    <ListGroupItem key={`${item.name}`}>
       {item.name}
     </ListGroupItem>
   ));
@@ -65,7 +65,7 @@ const RockView = ({
           </p>
         </Col>
         <Col sm="12">
-          <img src={rock.image} alt={`${rock.name}-skałoplan`} style={{ width: '100%', 'max-width': '500px' }} />
+          <img src={rock.imageUrl} alt={`${rock.name}-skałoplan`} style={{ width: '100%', maxWidth: '500px' }} />
         </Col>
       </Row>
       <Row>
@@ -107,7 +107,7 @@ const RockView = ({
           <Link className="btn btn-secondary" to="/rocks">
             <i className="icon-arrow-left" />
             {' '}
-            Powrót
+            Powrót do szukania
           </Link>
         </Col>
       </Row>
@@ -119,7 +119,7 @@ RockView.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   rockId: PropTypes.string.isRequired,
-  rocks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  rocks: PropTypes.objectOf(PropTypes.shape()).isRequired,
 };
 
 RockView.defaultProps = {

@@ -27,7 +27,7 @@ Error.propTypes = {
 };
 
 Error.defaultProps = {
-  title: 'Oj!',
+  title: 'Błąd!',
   content: 'Przepraszamy pojawił się nieznany błąd.',
 };
 

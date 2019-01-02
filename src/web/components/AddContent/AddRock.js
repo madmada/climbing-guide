@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import _ from 'lodash';
 import update from 'react-addons-update';
 import { Link, withRouter } from 'react-router-dom';
 import {
@@ -144,8 +145,10 @@ class AddRock extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { onFormSubmit, history } = this.props;
+    const { name } = this.state;
+    const id = _.kebabCase(name);
     onFormSubmit(this.state)
-      .then(() => history.push('/')) // href ----> nowej skały
+      .then(() => history.push(`/rock/${id}`))
       .catch((e) => {
         console.log(`Error: ${e}`);
         scrollTop();
