@@ -27,13 +27,16 @@ export function getRocks() {
     })).catch(e => console.log(e));
 }
 
-export function addNewGrade(data) {
+export function updateRock(data) {
   if (Firebase === null) return () => new Promise(resolve => resolve());
   const {
     index,
     gradesum,
     votes,
     rock,
+    rating,
+    author,
+    comment,
   } = data;
 
   const UID = (
@@ -44,29 +47,72 @@ export function addNewGrade(data) {
     && Firebase.auth().currentUser.uid
   ) ? Firebase.auth().currentUser.uid : null;
 
-  if (!UID) return false;
+  if (!UID) return () => new Promise(resolve => resolve());
 
-  const routeData = rock.routes[index];
-  routeData.gradesum = gradesum;
-  routeData.votes = votes;
-  if (typeof routeData.voters !== 'undefined' && routeData.voters.length() === 0) {
-    routeData.voters.push(UID);
-  } else {
-    routeData.voters = [];
-    routeData.voters.push(UID);
+  const update = gradesum ? 'gradesum' : rating ? 'rating' : comment ? 'comment' : '';
+  console.log(update);
+
+  switch (update) {
+    case 'gradesum':
+      /* Add new grade to route */
+      const routeData = rock.routes[index];
+      routeData.gradesum = gradesum;
+      routeData.votes = votes;
+      if (typeof routeData.voters !== 'undefined' && routeData.voters.length > 0) {
+        routeData.voters.push(UID);
+      } else {
+        routeData.voters = [];
+        routeData.voters.push(UID);
+      }
+      return dispatch => new Promise(async (resolve) => {
+        await statusMessage(dispatch, 'loading', true);
+        return FirebaseRef.child(`rocks/${rock.id}/routes/${index}`).set(routeData)
+          .then(() => statusMessage(dispatch, 'loading', false).then(resolve)).then(console.log('grade updated'));
+      }).catch(async (err) => {
+        await statusMessage(dispatch, 'loading', false);
+        throw err.message;
+      });
+    case 'rating':
+      /* Add new rate to rock */
+      const rockData = rock;
+      rockData.ratingsum = rating;
+      rockData.votes = votes;
+      if (typeof rockData.comments !== 'undefined' && rockData.voters.length > 0) {
+        rockData.voters.push(UID);
+      } else {
+        rockData.voters = [];
+        rockData.voters.push(UID);
+      }
+      return dispatch => new Promise(async (resolve) => {
+        await statusMessage(dispatch, 'loading', true);
+        return FirebaseRef.child(`rocks/${rock.id}`).set(rockData)
+          .then(() => statusMessage(dispatch, 'loading', false).then(resolve)).then(console.log('rate updated'));
+      }).catch(async (err) => {
+        await statusMessage(dispatch, 'loading', false);
+        throw err.message;
+      });
+    case 'comment':
+      /* Add new comment to rock */
+      const data = rock;
+      const commentObj = { comment: comment, author: author }
+      if (typeof data.comments !== 'undefined' && data.comments.length > 0) {
+        data.comments.push(commentObj);
+      } else {
+        data.comments = [];
+        data.comments.push(commentObj);
+      }
+      return dispatch => new Promise(async (resolve) => {
+        await statusMessage(dispatch, 'loading', true);
+        return FirebaseRef.child(`rocks/${rock.id}`).set(data)
+          .then(() => statusMessage(dispatch, 'loading', false).then(resolve)).then(console.log('comments updated'));
+      }).catch(async (err) => {
+        await statusMessage(dispatch, 'loading', false);
+        throw err.message;
+      });
+    default:
+      console.log('Update failed');
+      return () => new Promise(resolve => resolve());
   }
-
-  // const update = grade ? grade : rate;
-
-  return dispatch => new Promise(async (resolve) => {
-    await statusMessage(dispatch, 'loading', true);
-
-    return FirebaseRef.child(`rocks/${rock.id}/routes/${index}`).set(routeData)
-      .then(() => statusMessage(dispatch, 'loading', false).then(resolve)).then(console.log('grade updated'));
-  }).catch(async (err) => {
-    await statusMessage(dispatch, 'loading', false);
-    throw err.message;
-  });
 }
 
 export function getFilteredRocks(data) {

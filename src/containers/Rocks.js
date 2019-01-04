@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { getRocks, getFilteredRocks, addNewGrade } from '../actions/rocks';
+import { getRocks, getFilteredRocks, updateRock } from '../actions/rocks';
 
 class RockListing extends Component {
   static propTypes = {
@@ -69,7 +69,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchRocks: getRocks,
   searchRocks: getFilteredRocks,
-  onFormSubmit: addNewGrade,
+  onFormSubmit: updateRock,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RockListing);

@@ -80,10 +80,15 @@ body {
 
 .article-title {
   font-family: 'Rubik', sans-serif;
-  font-size: 4.25rem;
+  font-size: 3.25rem;
   font-weight: 700;
   text-align: center;
   color: white;
+  margin-bottom: 0.2em;
+
+  @media screen and (min-width: 768px) {
+    font-size: 4.25rem;
+  }
 }
 
 .dropdown-menu {

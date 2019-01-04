@@ -56,11 +56,14 @@ class RockView extends React.Component {
       rock: this.props.rocks.find(item => item.id === this.props.rockId),
       ratingOpen: false,
       rating: '',
+      comment: '',
+      author: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCommentChange = this.handleCommentChange.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
@@ -75,20 +78,39 @@ class RockView extends React.Component {
         index: routeIndex,
         gradesum: gradesum,
         votes: oldVotes + 1,
+        rating: '',
       });
     }
   }
 
-  handleNewRating = (newrating) => {
-    console.log('rating:', newrating);
-    this.toggle();
+  handleCommentChange = (event) => {
+    const { member } = this.props;
+    this.setState({
+      [event.target.name]: event.target.value,
+      author: `${member.firstName} ${member.lastName}`,
+    });
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    if (event) event.preventDefault();
     const { onFormSubmit } = this.props;
-    onFormSubmit(this.state);
+    onFormSubmit(this.state).then(() => this.setState({ comment: '' }));
   }
+
+  async handleNewRating(newRate) {
+    const { ratingsum, votes } = this.state.rock;
+    const oldRate = ratingsum;
+    const newRatingSum = oldRate + newRate;
+    console.log(oldRate, newRatingSum, newRate);
+    await this.setState({
+      rating: newRatingSum,
+      votes: votes + 1,
+      gradesum: '',
+    });
+    this.toggle();
+    this.handleSubmit();
+  }
+
 
   toggle() {
     this.setState({
@@ -97,7 +119,7 @@ class RockView extends React.Component {
   }
 
   render() {
-    const { rock, ratingOpen } = this.state;
+    const { rock, ratingOpen, comment } = this.state;
     const {
       error,
       loading,
@@ -119,9 +141,16 @@ class RockView extends React.Component {
 
     const comments = rock.comments ? rock.comments.map((item, index) => (
       <ListGroupItem key={`comment-${index}`}>
-        {item.author}
-        {': '}
-        {item.comment}
+        <Row>
+          <Col xs="2" sm="1" style={{ textAlign: 'end' }}>
+            <Button color="success" disabled><i className="icon-user" /></Button>
+          </Col>
+          <Col style={{ alignSelf: 'center' }}>
+            <strong>{item.author}</strong>
+            {': '}
+            {item.comment}
+          </Col>
+        </Row>
       </ListGroupItem>
     )) : <ListGroupItem>Brak komentarzy</ListGroupItem>;
 
@@ -181,7 +210,7 @@ class RockView extends React.Component {
               <h1 className="article-title mbr-bold">
                 {rock.name}
               </h1>
-              <h3 className="font-weight-light">
+              <h3 className="font-weight-light" style={{ color: '#adadad' }}>
                 {rock.rockType}
               </h3>
             </div>
@@ -255,6 +284,23 @@ class RockView extends React.Component {
               <ListGroup className="list-group-flush">
                 {comments}
               </ListGroup>
+              <Row className="px-4 py-3">
+                <Col>
+                  <Form id="add-comment" onSubmit={this.handleSubmit}>
+                    <FormGroup>
+                      <Input
+                        type="textarea"
+                        name="comment"
+                        id="comment"
+                        placeholder="Dodaj swój komentarz."
+                        value={comment}
+                        onChange={this.handleCommentChange}
+                      />
+                    </FormGroup>
+                    <Button color="info" disabled={!comment}>Skomentuj</Button>
+                  </Form>
+                </Col>
+              </Row>
             </Card>
           </Col>
         </Row>
@@ -266,25 +312,37 @@ class RockView extends React.Component {
               Powrót do szukania
             </Link>
           </Col>
-          {loggedIn && (
+          {loggedIn ? (
             <Col className="pt-3" sm="4" style={{ textAlign: 'center' }}>
-              <Button onClick={this.toggle}>
-                <i className="icon-target" />
-              </Button>
               Oceń artykuł:
-              <div className="rating" style={{fontSize: '2rem'}}>
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                <Modal
-                  className="rating-modal"
-                  style={{ marginTop: '40vh' }}
-                  isOpen={ratingOpen}
-                  toggle={this.toggle}
-                >
-                  <Rating onSubmit={this.handleNewRating} />
-                </Modal>
-              </div>
+              {rock.voters && rock.voters.includes(member.uid) ? (
+                <p className="text-success">
+                  Oceniono
+                  {' '}
+                  <i className="fa fa-check" aria-hidden="true" />
+                </p>
+              ) : (
+                <Fragment>
+                  <Button outline className="ml-3" onClick={this.toggle}>
+                    <i className="icon-star" />
+                  </Button>
+                  <Modal
+                    className="rating-modal"
+                    style={{ marginTop: '40vh' }}
+                    isOpen={ratingOpen}
+                    toggle={this.toggle}
+                  >
+                    <Rating onSubmit={rate => this.handleNewRating(rate)} />
+                  </Modal>
+                </Fragment>)}
             </Col>
-          )}
+          ) : (
+            <Col className="pt-3" sm="4" style={{ textAlign: 'center' }}>
+              <Link to="/login">
+                Zaloguj się
+              </Link>
+              , aby ocenić artykuł
+            </Col>)}
         </Row>
       </div>
     );
