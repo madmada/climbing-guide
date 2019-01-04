@@ -26,8 +26,8 @@ export default {
   missingRockType: 'Brakujące pole: Rodzaj skały',
   rock404: 'Nie znaleziono podanej skały',
 
-  // Recipes
-  recipe404: 'Recipe not found',
+  // Articles
+  article404: 'Article not found',
   missingMealId: 'Missing meal definition',
 
 };

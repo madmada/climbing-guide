@@ -9,8 +9,9 @@ import TemplateSidebar from '../components/TemplateSidebar';
 import Home from '../components/Home';
 import Member from '../../containers/Member';
 
+import ArticlesComponent from '../components/Articles';
+
 import RecipesContainer from '../../containers/Recipes';
-import RecipesComponent from '../components/Recipes';
 import RecipeViewComponent from '../components/Recipe';
 
 import RocksContainer from '../../containers/Rocks';
@@ -98,7 +99,7 @@ const Index = () => (
       path="/recipes"
       render={props => (
         <TemplateSidebar>
-          <RecipesContainer {...props} Layout={RecipesComponent} />
+          <RocksContainer {...props} Layout={ArticlesComponent} />
         </TemplateSidebar>
       )}
     />

@@ -8,6 +8,7 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 import configureStore from '../store/index';
 import registerServiceWorker from './register-service-worker';
 import Routes from './routes/index';
+import ScrollToTop from './scrollToTop';
 
 // Components
 import Loading from './components/Loading';
@@ -24,7 +25,9 @@ const Root = () => (
   <Provider store={store}>
     <PersistGate loading={<Loading />} persistor={persistor}>
       <Router>
-        <Routes />
+        <ScrollToTop>
+          <Routes />
+        </ScrollToTop>
       </Router>
     </PersistGate>
   </Provider>

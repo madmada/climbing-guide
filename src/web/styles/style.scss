@@ -1,6 +1,5 @@
 @import "bootstrap";
 @import "components/sidebar";
-@import "components/recipes";
 @import "components/loading";
 @import "components/header";
 @import "components/footer";
@@ -9,10 +8,6 @@
 body {
   padding-top: 3.5em;
   overflow-x: hidden;
-}
-
-.container-fluid {
-
 }
 
 /**
@@ -69,6 +64,12 @@ body {
   }
 }
 
+.parallax--articles {
+  .react-parallax-bgimage {
+    filter: brightness(50%) !important;
+  }
+}
+
 .article-title__wrapper {
   text-align: center;
   padding: 20px;
@@ -89,6 +90,11 @@ body {
   @media screen and (min-width: 768px) {
     font-size: 4.25rem;
   }
+}
+
+.artice-card__description {
+  height: 150px;
+  overflow: hidden;
 }
 
 .dropdown-menu {
