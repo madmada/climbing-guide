@@ -3,10 +3,9 @@ import _ from 'lodash';
 import { Firebase, FirebaseRef } from '../lib/firebase';
 import ErrorMessages from '../constants/errors';
 import statusMessage from './status';
+import { getRate } from '../helpers';
 
-/**
-  * Set an Error Message
-  */
+
 export function setError(message) {
   return dispatch => new Promise(resolve => resolve(dispatch({
     type: 'ROCKS_ERROR',
@@ -14,10 +13,7 @@ export function setError(message) {
   })));
 }
 
-/**
-  * Get Rocks
-  */
-export function getAllRocks() {
+export function getRocks() {
   if (Firebase === null) return () => new Promise(resolve => resolve());
 
   return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('name')
@@ -26,28 +22,108 @@ export function getAllRocks() {
 
       return resolve(dispatch({
         type: 'ROCKS_REPLACE',
+        data: Object.values(rocks),
+      }));
+    })).catch(e => console.log(e));
+}
+
+export function addNewGrade(data) {
+  if (Firebase === null) return () => new Promise(resolve => resolve());
+  const {
+    index,
+    gradesum,
+    votes,
+    rock,
+  } = data;
+
+  const UID = (
+    FirebaseRef
+    && Firebase
+    && Firebase.auth()
+    && Firebase.auth().currentUser
+    && Firebase.auth().currentUser.uid
+  ) ? Firebase.auth().currentUser.uid : null;
+
+  if (!UID) return false;
+
+  const routeData = rock.routes[index];
+  routeData.gradesum = gradesum;
+  routeData.votes = votes;
+  if (typeof routeData.voters !== 'undefined' && routeData.voters.length() === 0) {
+    routeData.voters.push(UID);
+  } else {
+    routeData.voters = [];
+    routeData.voters.push(UID);
+  }
+
+  // const update = grade ? grade : rate;
+
+  return dispatch => new Promise(async (resolve) => {
+    await statusMessage(dispatch, 'loading', true);
+
+    return FirebaseRef.child(`rocks/${rock.id}/routes/${index}`).set(routeData)
+      .then(() => statusMessage(dispatch, 'loading', false).then(resolve)).then(console.log('grade updated'));
+  }).catch(async (err) => {
+    await statusMessage(dispatch, 'loading', false);
+    throw err.message;
+  });
+}
+
+export function getFilteredRocks(data) {
+  if (Firebase === null) return () => new Promise(resolve => resolve());
+  const {
+    name,
+    region,
+    rockType,
+    sortBy,
+  } = data;
+
+  let sortKey;
+  let sortOrder;
+
+  switch (sortBy) {
+    case 'rate':
+      sortKey = rock => getRate(rock.ratingsum, rock.votes);
+      sortOrder = 'asc';
+      break;
+    case 'rate-desc':
+      sortKey = rock => getRate(rock.ratingsum, rock.votes);
+      sortOrder = 'desc';
+      break;
+    case 'date':
+      sortKey = 'date';
+      sortOrder = 'asc';
+      break;
+    case 'date-desc':
+      sortKey = 'date';
+      sortOrder = 'desc';
+      break;
+    case 'name':
+      sortKey = 'name';
+      sortOrder = 'asc';
+      break;
+    default:
+      sortKey = 'name';
+      sortOrder = 'asc';
+      break;
+  }
+
+  return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('name')
+    .on('value', (snapshot) => {
+      let rocks = snapshot.val() || [];
+      rocks = _.orderBy(rocks, [sortKey], [sortOrder]);
+      rocks = Object.values(rocks);
+      if (name) rocks = rocks.filter(rock => rock.name === name);
+      if (region) rocks = rocks.filter(rock => rock.location.region === region);
+      if (rockType) rocks = rocks.filter(rock => rock.rockType === rockType);
+
+      return resolve(dispatch({
+        type: 'ROCKS_REPLACE',
         data: rocks,
       }));
     })).catch(e => console.log(e));
 }
 
-// export function getRocksByName() {
-//   if (Firebase === null) return () => new Promise(resolve => resolve());
-
-//   return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('name').startAt('B').endAt('B\uf8ff')
-//     .on('value', (snapshot) => {
-//       const rocks = snapshot.val() || [];
-
-//       return resolve(dispatch({
-//         type: 'ROCKS_REPLACE',
-//         data: rocks,
-//       }));
-//     })).catch(e => console.log(e));
-// }
-
-/**
-  * Add new rock to Firebase
-  */
 export function addNewRock(formData) {
   const {
     name,

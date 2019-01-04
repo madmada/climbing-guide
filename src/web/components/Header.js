@@ -65,7 +65,7 @@ class Header extends Component {
           <NavbarToggler onClick={this.toggleDropDown} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <div className="d-block d-sm-none">
+              <div className="d-block d-sm-none" onClick={this.toggleDropDown}>
                 {SidebarNavItems()}
               </div>
               <UncontrolledDropdown nav>
@@ -102,6 +102,7 @@ class Header extends Component {
                   }
                 </DropdownMenu>
               </UncontrolledDropdown>
+              <div className="d-block d-sm-none" style={{ paddingBottom: '100vh' }} />
             </Nav>
           </Collapse>
         </Navbar>

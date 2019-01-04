@@ -3,32 +3,41 @@ import GoogleMapReact from 'google-map-react';
 import mapStyle from './MapOptions/styles';
 import Config from '../../../constants/config';
 
-const Marker = ({ text }) => <div>{text}</div>;
+const Marker = ({ text }) => (
+  <i
+    style={{
+      fontSize: '4em',
+      color: '#00bfff',
+      padding: '15px 10px',
+      display: 'inline-flex',
+      textAlign: 'center',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transform: 'translate(-50%, -50%)'}}
+    className="icon-target" />);
 const apiKey = Config.gMapApiKey;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class GoogleMap extends Component {
   render() {
+    const { center, zoom, lat, lng } = this.props;
     return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div style={{ height: '400px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{
-            // do not push
             key: apiKey,
             language: 'pl',
             ragion: 'pl',
           }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultCenter={center}
+          defaultZoom={zoom}
           options={{
             styles: mapStyle,
           }}
         >
           <Marker
-            lat={52}
-            lng={380}
-            text={'My marker'}
+            lat={lat}
+            lng={lng}
           />
         </GoogleMapReact>
       </div>
@@ -38,10 +47,10 @@ class GoogleMap extends Component {
 
 GoogleMap.defaultProps = {
   center: {
-    lat: 52,
-    lng: 380,
+    lat: 51.400646,
+    lng: 21.153286,
   },
-  zoom: 6.2,
+  zoom: 11,
 };
 
 export default GoogleMap;

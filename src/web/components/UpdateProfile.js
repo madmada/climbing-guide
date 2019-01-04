@@ -109,7 +109,7 @@ class UpdateProfile extends React.Component {
                       type="text"
                       name="firstName"
                       id="firstName"
-                      placeholder="John"
+                      placeholder="Jan"
                       value={firstName}
                       onChange={this.handleChange}
                     />
@@ -122,7 +122,7 @@ class UpdateProfile extends React.Component {
                       type="text"
                       name="lastName"
                       id="lastName"
-                      placeholder="Doe"
+                      placeholder="Kowalski"
                       value={lastName}
                       onChange={this.handleChange}
                     />
@@ -149,7 +149,7 @@ class UpdateProfile extends React.Component {
                         type="email"
                         name="email"
                         id="email"
-                        placeholder="john@doe.corp"
+                        placeholder="jan@kowalski.pl"
                         value={email}
                         onChange={this.handleChange}
                       />

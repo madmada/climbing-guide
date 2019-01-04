@@ -54,7 +54,7 @@ class AddRock extends React.Component {
       name: '',
       description: '',
       rockType: '',
-      author: `${props.member.firstName} ${props.member.lastName}` || '',
+      author: props.member.email ? `${props.member.firstName} ${props.member.lastName}` : '',
       imageUploading: false,
       locationPick: false,
       imageUrl: '',
@@ -169,7 +169,7 @@ class AddRock extends React.Component {
   }
 
   render() {
-    const { loading, error } = this.props;
+    const { loading, error, member } = this.props;
     const {
       name,
       description,
@@ -179,7 +179,31 @@ class AddRock extends React.Component {
       routes,
     } = this.state;
 
+    const loggedIn = !!(member && member.email);
+
     const renderScale = Object.values(scale).map(item => <option>{item}</option>);
+
+    const LogInInfo = (
+      <Alert color="danger">
+        <h4 className="alert-heading">Uwaga!</h4>
+        <p>
+          Aby dodawać treści w naszym serwisie musisz być zalogowany.
+        </p>
+        <Link to="/login">
+          <Button color="primary">
+            Zaloguj się
+          </Button>
+        </Link>
+        <hr />
+        <p className="mb-0">
+          Nie masz konta?
+          {' '}
+          <Link to="/sign-up">
+            Zarejestruj&nbsp;się
+          </Link>
+        </p>
+      </Alert>
+    );
 
     const addRoutes = routes.map((item, index) => (
       <Fragment>
@@ -221,10 +245,12 @@ class AddRock extends React.Component {
     // Loading
     if (loading) return <Loading />;
 
+    if (!loggedIn) return LogInInfo;
+
     return (
       <div>
         <Row>
-          <Col lg={{ size: 8, offset: 2 }}>
+          <Col lg={{ size: 10, offset: 1 }}>
             <Card className="input-card" id="add-rock">
               <CardHeader>
                 Dodaj nową skałę

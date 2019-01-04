@@ -88,7 +88,7 @@ class ForgotPassword extends React.Component {
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="john@doe.corp"
+                      placeholder="jan@kowalski.pl"
                       value={email}
                       onChange={this.handleChange}
                     />

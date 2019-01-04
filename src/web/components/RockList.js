@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
 import FilterResults from 'react-filter-search';
 import {
   Row,
@@ -8,22 +7,23 @@ import {
   Table,
   Form,
   FormGroup,
-  Label,
+  Badge,
   Input,
   Popover,
-  PopoverBody,
+  Button,
 } from 'reactstrap';
 import { Redirect } from 'react-router';
 import rockTypes from '../../constants/rockTypes';
 import regionTypes from '../../constants/regionTypes';
-import { renderRatingStars, getRate, timestampToDate } from '../../helpers';
+import { renderRatingStars, getRate, timestampToDate, scrollTop } from '../../helpers';
 import Error from './Error';
 
 class RockListing extends React.Component {
   static propTypes = {
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
-    rocks: PropTypes.objectOf(PropTypes.shape()).isRequired,
+    rocks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    searchRocks: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
@@ -32,13 +32,19 @@ class RockListing extends React.Component {
 
   constructor(props) {
     super(props);
-    this.handleRowClick = this.handleRowClick.bind(this);
     this.state = {
       redirect: false,
       link: '',
       name: '',
+      region: '',
+      rockType: '',
+      sortBy: '',
       popoverOpen: false,
     };
+
+    this.handleRowClick = this.handleRowClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (event) => {
@@ -54,11 +60,36 @@ class RockListing extends React.Component {
     }
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { searchRocks } = this.props;
+    searchRocks(this.state);
+  }
+
+  handleRefresh = () => {
+    const { searchRocks } = this.props;
+    const clearData = {
+      name: '',
+      region: '',
+      rockType: '',
+      sortBy: '',
+    };
+    this.setState({
+      name: '',
+      region: '',
+      rockType: '',
+      sortBy: '',
+    });
+    console.log(clearData);
+    searchRocks(clearData);
+  }
+
   handleRowClick = (id) => {
     this.setState({
       redirect: true,
       link: `/rock/${id}`,
     });
+    scrollTop();
   }
 
   render() {
@@ -66,14 +97,17 @@ class RockListing extends React.Component {
     const {
       redirect,
       name,
+      region,
+      rockType,
+      sortBy,
       popoverOpen,
     } = this.state;
 
     if (redirect) return <Redirect push to={this.state.link} />;
 
-    const row = Object.values(rocks).map(item => (
+    const row = rocks.map(item => (
 
-      <tr onClick={() => this.handleRowClick(item.id)}>
+      <tr key={item.name} onClick={() => this.handleRowClick(item.id)}>
         <th scope="row">{item.name}</th>
         <td className="hide-mobile">{item.location.region}</td>
         <td className="hide-mobile">{item.rockType}</td>
@@ -97,7 +131,7 @@ class RockListing extends React.Component {
         </Row>
         <Form onSubmit={this.handleSubmit}>
           <Row>
-            <Col sm={3}>
+            <Col lg={3}>
               <FormGroup>
                 <Input
                   type="text"
@@ -110,13 +144,13 @@ class RockListing extends React.Component {
                 />
                 <FilterResults
                   value={name}
-                  data={Object.values(rocks)}
+                  data={rocks}
                   renderResults={results => (
                     <Popover placement="bottom" isOpen={popoverOpen} target="name" toggle={this.toggle}>
                       <Table style={{ margin: '0' }} hover>
                         <tbody>
                           {results.length > 0 ? results.slice(0, 4).map(el => (
-                            <tr style={{ cursor: 'pointer', display: 'inline-block', width: '100%', textAlign: 'left' }} onClick={() => this.setState({ name: el.name, popoverOpen: false })}>
+                            <tr key={el.name} style={{ cursor: 'pointer', display: 'inline-block', width: '100%', textAlign: 'left' }} onClick={() => this.setState({ name: el.name, popoverOpen: false })}>
                               <td style={{ display: 'inline-block', border: 'none' }}>
                                 {el.name}
                               </td>
@@ -129,15 +163,54 @@ class RockListing extends React.Component {
                 />
               </FormGroup>
             </Col>
-            <Col sm={2}>
+            <Col lg={3}>
               <FormGroup>
-                <Input type="select" name="regionType" onChange={this.handleChange} defaultValue="Województwo">
-                  <option disabled>Województwo</option>
-                  {regionTypes.map(item => (
-                    <option>{item}</option>
+                <Input type="select" name="region" onChange={this.handleChange} value={region}>
+                  <option value="" disabled>Województwo</option>
+                  {regionTypes.map((item, index) => (
+                    <option key={index}>{item}</option>
                   ))}
                 </Input>
               </FormGroup>
+            </Col>
+            <Col lg={2}>
+              <FormGroup>
+                <Input type="select" name="rockType" onChange={this.handleChange} value={rockType}>
+                  <option value="" disabled>Typ skały</option>
+                  {rockTypes.map((item, index)  => (
+                    <option key={index}>{item}</option>
+                  ))}
+                </Input>
+              </FormGroup>
+            </Col>
+            <Col lg={3}>
+              <FormGroup>
+                <Input type="select" name="sortBy" onChange={this.handleChange} value={sortBy}>
+                  <option value="" disabled>Sortuj według</option>
+                  <option value="rate">Ocena - rosnąco</option>
+                  <option value="rate-desc">Ocena - malejąco</option>
+                  <option value="date">Data - od najstarszych</option>
+                  <option value="date-desc">Data - od najnowszych</option>
+                  <option value="name">Alfabetycznie</option>
+
+                </Input>
+              </FormGroup>
+            </Col>
+            <Col lg={1}>
+              <Button style={{ width: '100%', marginBottom: '10px' }}><i className="icon-magnifier" /></Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={12}>
+              <Badge
+                color="info"
+                style={{ fontSize: '1rem', width: '100%', marginTop: '10px', marginBottom: '20px', cursor: 'pointer' }}
+                onClick={() => this.handleRefresh()}
+              >
+                <i className="icon-refresh" />
+                {' '}
+                Wyczyść filtry
+              </Badge>
             </Col>
           </Row>
         </Form>

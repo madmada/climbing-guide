@@ -8,6 +8,11 @@
 
 body {
   padding-top: 3.5em;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+
 }
 
 /**
@@ -33,29 +38,76 @@ body {
   }
 }
 
+/**
+ * Ignore default padding
+ */
+.content--fullfill {
+  overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -1.5rem;
+  @media screen and (min-width: 768px) {
+    margin-left: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+.content--fullwidth {
+  overflow: hidden;
+  margin-left: -15px;
+  margin-right: -15px;
+  @media screen and (min-width: 768px) {
+    margin-left: -3rem;
+    margin-right: -3rem;
+
+  }
+}
+
+.parallax--home{
+  .react-parallax-bgimage {
+    filter: brightness(40%) !important;
+  }
+}
+
+.article-title__wrapper {
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.article-title {
+  font-family: 'Rubik', sans-serif;
+  font-size: 4.25rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+}
+
 .dropdown-menu {
   padding: 0;
   top: 5px;
 
   .dropdown-item {
     padding: 0.5rem 1.6rem;
+    line-height: 2.3;
+  }
+
+  .dropdown-divider {
+    margin: 0;
   }
 }
 
-.popover {
-  line-height: 2.3;
-  font-size: 1.2rem;
-  width: 100%;
-}
-
 .hide-mobile {
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     display: none;
   }
 }
 
 .hide-desktop {
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 }

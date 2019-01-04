@@ -24,15 +24,6 @@ const SidebarNavItems = () => (
       </Link>
     </NavItem>
     <NavItem>
-      <Link className={`nav-link ${window.location.pathname === '/map' && 'active'}`} to="/map">
-        <i className="icon-map" />
-        {' '}
-        <span>
-          Mapa
-        </span>
-      </Link>
-    </NavItem>
-    <NavItem>
       <Link className={`nav-link ${window.location.pathname.startsWith('/recipe') && 'active'}`} to="/recipes">
         <i className="icon-directions" />
         {' '}
@@ -46,7 +37,7 @@ const SidebarNavItems = () => (
         <i className="icon-plus" />
         {' '}
         <span>
-          Dodaj treści
+          Dodaj skałę
         </span>
       </Link>
     </NavItem>

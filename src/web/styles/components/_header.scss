@@ -17,6 +17,13 @@ header {
   font-size: 1.1rem;
 }
 
+.navbar-collapse {
+  @media screen and (max-width: 600px) {
+    font-size: 1.3rem;
+    line-height: 2;
+  }
+}
+
 .dropdown-item {
   &, a {
     color: $primary;

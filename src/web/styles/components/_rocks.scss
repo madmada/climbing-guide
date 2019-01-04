@@ -3,3 +3,27 @@
     cursor: pointer;
   }
 }
+
+.table td {
+  vertical-align: middle;
+}
+
+.popover {
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+.parallax--rock{
+  .react-parallax-bgimage {
+    filter: brightness(50%) !important;
+    top: -265px;
+  }
+}
+
+.rating-modal {
+  .modal-content {
+    border: 0;
+    background-color: transparent;
+    align-items: center;
+  }
+}

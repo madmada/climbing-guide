@@ -10,8 +10,9 @@
   z-index: 1000;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto; // Scrollable contents if viewport is shorter than content.
   background-color: #22262E;
+  background-image: linear-gradient(#22262E, #040608); // gradient effect
   border-right: 1px solid #252931;
 
   .nav {

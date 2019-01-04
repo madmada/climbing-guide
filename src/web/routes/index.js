@@ -7,6 +7,7 @@ import TemplateSidebar from '../components/TemplateSidebar';
 
 // Routes
 import Home from '../components/Home';
+import Member from '../../containers/Member';
 
 import RecipesContainer from '../../containers/Recipes';
 import RecipesComponent from '../components/Recipes';
@@ -41,7 +42,7 @@ const Index = () => (
       path="/"
       render={props => (
         <TemplateSidebar>
-          <Home {...props} />
+          <Member {...props} Layout={Home} />
         </TemplateSidebar>
       )}
     />
@@ -112,9 +113,9 @@ const Index = () => (
     <Route
       path="/add"
       render={props => (
-        <TemplateBlank>
+        <TemplateSidebar>
           <AddRockContaier {...props} Layout={AddRockComponent} />
-        </TemplateBlank>
+        </TemplateSidebar>
       )}
     />
     <Route
