@@ -96,7 +96,7 @@ const Index = () => (
       )}
     />
     <Route
-      path="/recipes"
+      path="/articles"
       render={props => (
         <TemplateSidebar>
           <RocksContainer {...props} Layout={ArticlesComponent} />

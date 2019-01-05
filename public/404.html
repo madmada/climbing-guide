@@ -1,39 +1,41 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Single Page Apps for GitHub Pages</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafrex/spa-github-pages
-      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-      // ----------------------------------------------------------------------
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment,
-      // e.g. http://www.foo.tld/one/two?a=b&c=d#qwe, becomes
-      // http://www.foo.tld/?p=/one/two&q=a=b~and~c=d#qwe
-      // Note: this 404.html file must be at least 512 bytes for it to work
-      // with Internet Explorer (it is currently > 512 bytes)
-      // If you're creating a Project Pages site and NOT using a custom domain,
-      // then set segmentCount to 1 (enterprise users may need to set it to > 1).
-      // This way the code will only replace the route part of the path, and not
-      // the real directory in which the app resides, for example:
-      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
-      // https://username.github.io/repo-name/?p=/one/two&q=a=b~and~c=d#qwe
-      // Otherwise, leave segmentCount as 0.
-      var segmentCount = 0;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
-    </script>
+    <title>Łoimy.pl | Przewodnik wspinaczkowy</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+     <!-- update the version number as needed -->
+     <script defer src="/__/firebase/5.6.0/firebase-app.js"></script>
+     <!-- include only the Firebase features as you need -->
+     <script defer src="/__/firebase/5.6.0/firebase-auth.js"></script>
+     <script defer src="/__/firebase/5.6.0/firebase-database.js"></script>
+     <script defer src="/__/firebase/5.6.0/firebase-messaging.js"></script>
+     <script defer src="/__/firebase/5.6.0/firebase-storage.js"></script>
+     <!-- initialize the SDK after all desired features are loaded -->
+     <script defer src="/__/firebase/init.js"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
+    <div id="root"></div>
+    <script src="/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" crossorigin="anonymous"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
   </body>
 </html>
