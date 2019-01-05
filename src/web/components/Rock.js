@@ -88,6 +88,8 @@ class RockView extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
       author: `${member.firstName} ${member.lastName}`,
+      rating: '',
+      gradesum: '',
     });
   }
 
@@ -101,11 +103,11 @@ class RockView extends React.Component {
     const { ratingsum, votes } = this.state.rock;
     const oldRate = ratingsum;
     const newRatingSum = oldRate + newRate;
-    console.log(oldRate, newRatingSum, newRate);
     await this.setState({
       rating: newRatingSum,
       votes: votes + 1,
       gradesum: '',
+      comment: '',
     });
     this.toggle();
     this.handleSubmit();

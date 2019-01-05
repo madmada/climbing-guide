@@ -156,7 +156,7 @@ export function resetPassword(formData) {
     // Go to Firebase
     return Firebase.auth()
       .sendPasswordResetEmail(email)
-      .then(() => statusMessage(dispatch, 'success', 'We have emailed you a reset link').then(resolve(dispatch({ type: 'USER_RESET' }))))
+      .then(() => statusMessage(dispatch, 'success', 'Przesłano email z linkiem do zresetowania hasła').then(resolve(dispatch({ type: 'USER_RESET' }))))
       .catch(reject);
   }).catch(async (err) => {
     await statusMessage(dispatch, 'loading', false);

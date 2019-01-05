@@ -50,7 +50,6 @@ export function updateRock(data) {
   if (!UID) return () => new Promise(resolve => resolve());
 
   const update = gradesum ? 'gradesum' : rating ? 'rating' : comment ? 'comment' : '';
-  console.log(update);
 
   switch (update) {
     case 'gradesum':
@@ -58,7 +57,7 @@ export function updateRock(data) {
       const routeData = rock.routes[index];
       routeData.gradesum = gradesum;
       routeData.votes = votes;
-      if (typeof routeData.voters !== 'undefined' && routeData.voters.length > 0) {
+      if (routeData.voters !== undefined) {
         routeData.voters.push(UID);
       } else {
         routeData.voters = [];
@@ -77,7 +76,7 @@ export function updateRock(data) {
       const rockData = rock;
       rockData.ratingsum = rating;
       rockData.votes = votes;
-      if (typeof rockData.comments !== 'undefined' && rockData.voters.length > 0) {
+      if (rockData.voters !== undefined) {
         rockData.voters.push(UID);
       } else {
         rockData.voters = [];
@@ -95,7 +94,7 @@ export function updateRock(data) {
       /* Add new comment to rock */
       const data = rock;
       const commentObj = { comment: comment, author: author }
-      if (typeof data.comments !== 'undefined' && data.comments.length > 0) {
+      if (data.comments !== undefined) {
         data.comments.push(commentObj);
       } else {
         data.comments = [];
