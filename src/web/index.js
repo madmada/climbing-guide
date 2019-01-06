@@ -6,7 +6,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/es/integration/react';
 
 import configureStore from '../store/index';
-import registerServiceWorker from './register-service-worker';
 import Routes from './routes/index';
 import ScrollToTop from './scrollToTop';
 
@@ -34,4 +33,3 @@ const Root = () => (
 );
 
 render(<Root />, rootElement);
-registerServiceWorker();
