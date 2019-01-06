@@ -22,7 +22,7 @@ import ErrorMessages from '../../constants/errors';
 import Loading from './Loading';
 import Error from './Error';
 import GoogleMap from './GoogleMap';
-import { renderRatingStars, getRate, getGrade } from '../../helpers';
+import { renderRatingStars, getRate, getGrade, compareNames } from '../../helpers';
 import scale from '../../constants/cracowScale';
 import Rating from './RatingStars';
 
@@ -314,7 +314,7 @@ class RockView extends React.Component {
               Szukaj innych skał
             </Link>
           </Col>
-          {loggedIn ? (
+          {!compareNames(member.firstName, member.lastName, rock.author) ? (loggedIn ? (
             <Col className="pt-3" sm="4" style={{ textAlign: 'center' }}>
               Oceń artykuł:
               {rock.voters && rock.voters.includes(member.uid) ? (
@@ -336,7 +336,8 @@ class RockView extends React.Component {
                   >
                     <Rating onSubmit={rate => this.handleNewRating(rate)} />
                   </Modal>
-                </Fragment>)}
+                </Fragment>
+              )}
             </Col>
           ) : (
             <Col className="pt-3" sm="4" style={{ textAlign: 'center' }}>
@@ -344,7 +345,8 @@ class RockView extends React.Component {
                 Zaloguj się
               </Link>
               , aby ocenić artykuł
-            </Col>)}
+            </Col>
+          )) : (<div></div>)}
         </Row>
       </div>
     );

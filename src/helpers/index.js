@@ -36,6 +36,12 @@ export const setDate = (day, month, year) => {
   return newDate;
 };
 
+export const compareNames = (first, last, full) => {
+  const fullname = `${first} ${last}`;
+  if (fullname === full) return true;
+  return false;
+};
+
 export const scrollTop = () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
