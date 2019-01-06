@@ -14,7 +14,7 @@ const Error = ({ title, content }) => (
       </p>
       <p>
         <Link to="/" className="btn btn-primary">
-          Powrót na właściwy szlak
+          Powrót na właściwą drogę
         </Link>
       </p>
     </Col>

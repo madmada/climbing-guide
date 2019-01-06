@@ -11,16 +11,13 @@ import Member from '../../containers/Member';
 
 import ArticlesComponent from '../components/Articles';
 
-import RecipesContainer from '../../containers/Recipes';
-import RecipeViewComponent from '../components/Recipe';
-
 import RocksContainer from '../../containers/Rocks';
 import RocksComponent from '../components/RockList';
 import RockViewComponent from '../components/Rock';
 
 
 import AddRockContaier from '../../containers/AddRock';
-import AddRockComponent from '../components/AddContent/AddRock';
+import AddRockComponent from '../components/AddRock';
 
 import SignUpContainer from '../../containers/SignUp';
 import SignUpComponent from '../components/SignUp';
@@ -80,7 +77,7 @@ const Index = () => (
       )}
     />
     <Route
-      path="/rocks"
+      path="/search"
       render={props => (
         <TemplateSidebar>
           <RocksContainer {...props} Layout={RocksComponent} />
@@ -96,18 +93,10 @@ const Index = () => (
       )}
     />
     <Route
-      path="/articles"
+      path="/rock-articles"
       render={props => (
         <TemplateSidebar>
           <RocksContainer {...props} Layout={ArticlesComponent} />
-        </TemplateSidebar>
-      )}
-    />
-    <Route
-      path="/recipe/:id"
-      render={props => (
-        <TemplateSidebar>
-          <RecipesContainer {...props} Layout={RecipeViewComponent} />
         </TemplateSidebar>
       )}
     />

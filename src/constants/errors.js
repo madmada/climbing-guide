@@ -27,7 +27,6 @@ export default {
   rock404: 'Nie znaleziono podanej skały',
 
   // Articles
-  article404: 'Article not found',
-  missingMealId: 'Missing meal definition',
+  article404: 'Nie znaleziono artykułu',
 
 };

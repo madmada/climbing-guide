@@ -50,7 +50,6 @@ class RockListing extends React.Component {
   handleChange = (event) => {
     if (event.target.name === 'name') {
       const length = event.target.value.length;
-      console.log(length);
       const open = length > 1;
       this.setState({
         [event.target.name]: event.target.value,
@@ -83,7 +82,6 @@ class RockListing extends React.Component {
       rockType: '',
       sortBy: '',
     });
-    console.log(clearData);
     searchRocks(clearData);
   }
 
@@ -109,7 +107,6 @@ class RockListing extends React.Component {
     if (redirect) return <Redirect push to={this.state.link} />;
 
     const row = rocks.slice(0, 15).map(item => (
-
       <tr key={item.name} onClick={() => this.handleRowClick(item.id)}>
         <th scope="row">{item.name}</th>
         <td className="hide-mobile">{item.location.region}</td>

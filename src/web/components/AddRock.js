@@ -22,11 +22,11 @@ import {
   ModalHeader,
   Progress,
 } from 'reactstrap';
-import LocalizationPicker from '../LocalizationPicker';
-import Loading from '../Loading';
-import { scrollTop } from '../../../helpers';
-import scale from '../../../constants/cracowScale';
-import rockTypes from '../../../constants/rockTypes';
+import LocalizationPicker from './LocalizationPicker';
+import Loading from './Loading';
+import { scrollTop } from '../../helpers';
+import scale from '../../constants/cracowScale';
+import rockTypes from '../../constants/rockTypes';
 
 class AddRock extends React.Component {
   static propTypes = {

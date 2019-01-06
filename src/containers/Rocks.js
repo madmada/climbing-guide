@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { getRocks, getFilteredRocks, updateRock } from '../actions/rocks';
+import { getRocks, getNewestRocks, getFilteredRocks, updateRock } from '../actions/rocks';
+import ArticleListing from '../web/components/Articles';
 
-class RockListing extends Component {
+class RockContainer extends Component {
   static propTypes = {
     Layout: PropTypes.func.isRequired,
     member: PropTypes.shape({}).isRequired,
@@ -16,13 +17,29 @@ class RockListing extends Component {
       params: PropTypes.shape({}),
     }),
     fetchRocks: PropTypes.func.isRequired,
+    fetchNewestRocks: PropTypes.func.isRequired,
+    searchRocks: PropTypes.func.isRequired,
+    onFormSubmit: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
     match: null,
   }
 
-  componentDidMount = () => this.fetchRocks();
+  // check if Layout has changed and refetch Rocks if so
+  componentDidUpdate(prevProps) {
+    if (this.props.Layout !== prevProps.Layout) {
+      if (this.props.Layout === ArticleListing) {
+        this.fetchNewestRocks();
+      } else this.fetchRocks();
+    }
+  }
+
+  componentDidMount = () => {
+    if (this.props.Layout === ArticleListing) {
+      this.fetchNewestRocks();
+    } else this.fetchRocks();
+  }
 
   /**
     * Fetch Data from API, saving to Redux
@@ -30,6 +47,11 @@ class RockListing extends Component {
   fetchRocks = () => {
     const { fetchRocks } = this.props;
     fetchRocks();
+  }
+
+  fetchNewestRocks = () => {
+    const { fetchNewestRocks } = this.props;
+    fetchNewestRocks();
   }
 
   searchRocks = (data) => {
@@ -68,8 +90,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchRocks: getRocks,
+  fetchNewestRocks: getNewestRocks,
   searchRocks: getFilteredRocks,
   onFormSubmit: updateRock,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RockListing);
+export default connect(mapStateToProps, mapDispatchToProps)(RockContainer);

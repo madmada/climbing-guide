@@ -7,13 +7,6 @@ npm-debug.*
 #
 .DS_Store
 
-# Android/IntelliJ
-android/
-.idea
-.tmp
-.gradle
-local.properties
-*.iml
-
 # Build
 build/bundle.js
+dist/bundle.js

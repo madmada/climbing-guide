@@ -60,7 +60,9 @@ module.exports = {
     minimizer: [
       new UglifyJsPlugin({
         uglifyOptions: {
-          compress: true,
+          compress: {
+            collapse_vars: false
+          },
           ecma: 6,
           output: {
             comments: false,

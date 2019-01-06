@@ -1,136 +1,14 @@
 {
-  "meals" : [ {
-    "id" : 1,
-    "title" : "Lunch"
-  }, {
-    "id" : 2,
-    "title" : "Dinner"
-  } ],
-  "recipes" : [ {
-    "author" : "John Smyf",
-    "body" : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 1,
-    "id" : 1,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rock-climbing-1024x701.jpg?alt=media&token=26f2ceed-4017-44c7-9e17-d6febf5eaf1f",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "new" : "witam",
-    "slug" : "this-is-an-article",
-    "title" : "This is an Article"
-  }, {
-    "author" : "Jane Doe",
-    "body" : "Typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 2,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-2.jpg?alt=media&token=6ed1740b-529b-4772-9a92-615e92b544b2",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "dummy-text-of-the-printing",
-    "title" : "Dummy text of the printing"
-  }, {
-    "author" : "Jane Doe",
-    "body" : "Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 1,
-    "id" : 3,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-3.jpg?alt=media&token=ad0c1913-fd82-48fa-937c-4298875544fa",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "survived-not-only-five",
-    "title" : "Survived not only five"
-  }, {
-    "author" : "John Smith",
-    "body" : "Has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 4,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-4.jpg?alt=media&token=52d5ab1a-98af-42cb-adaf-da04666a7953",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "standard-dummy-text-ever",
-    "title" : "Standard dummy text ever"
-  }, {
-    "author" : "John Smith",
-    "body" : "Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 5,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rock-climbing-1024x701.jpg?alt=media&token=26f2ceed-4017-44c7-9e17-d6febf5eaf1f",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "remaining-essentially-unchanged",
-    "title" : "Remaining essentially unchanged"
-  }, {
-    "author" : "John Smith",
-    "body" : "Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 6,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-2.jpg?alt=media&token=6ed1740b-529b-4772-9a92-615e92b544b2",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "only-five-centuries",
-    "title" : "Only five centuries"
-  }, {
-    "author" : "Jane Doe",
-    "body" : "Dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 1,
-    "id" : 7,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-1.jpg?alt=media&token=9f7c839b-2d40-4660-a2a0-bf6c2f64a2e5",
-    "ingredients" : [ "aute irure dolor in", "sed do eiusmod tempor incididunt", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "iste natus error sit voluptatem accusantium doloremque laudantium", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "but-also-the-leap-into",
-    "title" : "But also the leap into"
-  }, {
-    "author" : "John Smith",
-    "body" : "Text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 8,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-1.jpg?alt=media&token=9f7c839b-2d40-4660-a2a0-bf6c2f64a2e5",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "electronic-typesetting",
-    "title" : "Electronic typesetting"
-  }, {
-    "author" : "John Smith",
-    "body" : "Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 9,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-2.jpg?alt=media&token=6ed1740b-529b-4772-9a92-615e92b544b2",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "essentially-unchanged",
-    "title" : "Essentially unchanged"
-  }, {
-    "author" : "Jane Doe",
-    "body" : "Unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 10,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-1.jpg?alt=media&token=9f7c839b-2d40-4660-a2a0-bf6c2f64a2e5",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "standard-text",
-    "title" : "Standard text"
-  }, {
-    "author" : "John Smith",
-    "body" : "Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 11,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rock-climbing-1024x701.jpg?alt=media&token=26f2ceed-4017-44c7-9e17-d6febf5eaf1f",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "but-also",
-    "title" : "But also"
-  }, {
-    "author" : "John Smith",
-    "body" : "Industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    "category" : 2,
-    "id" : 12,
-    "image" : "https://firebasestorage.googleapis.com/v0/b/react-native-starter-app.appspot.com/o/image-2.jpg?alt=media&token=6ed1740b-529b-4772-9a92-615e92b544b2",
-    "ingredients" : [ "sed do eiusmod tempor incididunt", "aute irure dolor in", "do eiusmod tempor", "uis aute irure dolor in", "doloremque laudantium", "cupidatat non proident" ],
-    "method" : [ "iste natus error sit voluptatem accusantium doloremque laudantium", "magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet", "sed quia non numquam eius modi tempora incidunt ut labore" ],
-    "slug" : "text-but-also",
-    "title" : "Text But also"
-  } ],
   "rocks" : {
     "barylka" : {
       "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Maciej Lej",
+        "comment" : "Ciekawa skała"
+      }, {
+        "author" : "Wojtek Kobyła",
+        "comment" : "Dwa podejścia do króla lwa - dwa nieudane..."
+      } ],
       "date" : 1546436333327,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id" : "barylka",
@@ -144,7 +22,7 @@
         "region" : "świętokrzyskie"
       },
       "name" : "Baryłka",
-      "ratingsum" : 0,
+      "ratingsum" : 9,
       "rockType" : "Granit",
       "routes" : [ {
         "author" : "M. Cisek",
@@ -159,7 +37,8 @@
         "votes" : 1,
         "year" : "2011"
       } ],
-      "votes" : 0
+      "voters" : [ "BQXEnd7OOAdYZoSBk2OmeiH2MCa2" ],
+      "votes" : 2
     },
     "bryla" : {
       "author" : "Marek Cisek",
@@ -176,7 +55,7 @@
         "region" : "małopolskie"
       },
       "name" : "Bryła",
-      "ratingsum" : 0,
+      "ratingsum" : 4,
       "rockType" : "Piaskowiec",
       "routes" : [ {
         "author" : "M. Cisek",
@@ -185,7 +64,80 @@
         "votes" : 1,
         "year" : "2013"
       } ],
-      "votes" : 0
+      "votes" : 1
+    },
+    "dawna-skala" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Niewielka skała z łatwymi drogami. Teren leśny.",
+      "id" : "dawna-skala",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBR0Pp2XzjZiWVybfu%2Forlik-topo.jpg?alt=media&token=b54fba77-3184-4eb4-b797-13d4bb622c1c",
+      "location" : {
+        "adress" : "Pod Sokolicą 121, 32-089 Będkowice, Polska",
+        "gps" : {
+          "latitude" : 50.172981,
+          "longitude" : 19.740790100000027
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Dawna Skała",
+      "ratingsum" : 25,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "K. Mędrek",
+        "gradesum" : 14,
+        "name" : "Wyciek",
+        "votes" : 3,
+        "year" : "2010"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 37,
+        "name" : "Korek",
+        "voters" : [ "XMR3ZQhrMQWxNQDX199lzWRsHeM2" ],
+        "votes" : 3,
+        "year" : "2010"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 39,
+        "name" : "Wanda",
+        "voters" : [ "XMR3ZQhrMQWxNQDX199lzWRsHeM2" ],
+        "votes" : 2,
+        "year" : "2011"
+      } ],
+      "voters" : [ "XMR3ZQhrMQWxNQDX199lzWRsHeM2" ],
+      "votes" : 7
+    },
+    "kamieniolom" : {
+      "author" : "Marek Cisek",
+      "date" : 1545440845263,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "kamieniolom",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDjB0XoeOlAtCD4zQU%2Forlik-topo.jpg?alt=media&token=7c988deb-115d-44a0-beb0-b74b4982d19b",
+      "location" : {
+        "adress" : "DW791, Polska",
+        "gps" : {
+          "latitude" : 50.18558075451216,
+          "longitude" : 19.500847973437438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Kamieniołom",
+      "ratingsum" : 2,
+      "rockType" : "Andezyt",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 17,
+        "name" : "mała rysa",
+        "votes" : 1,
+        "year" : "2013"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 20,
+        "name" : "duża rysa",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 1
     },
     "kolano" : {
       "author" : "Marek Cisek",
@@ -219,6 +171,32 @@
       } ],
       "votes" : 0
     },
+    "kowal" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "kowal",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkSmYvdgo4D-CBc95%2Forlik-topo.jpg?alt=media&token=af6d79c6-c686-4cd5-b0e3-b020f905ca7c",
+      "location" : {
+        "adress" : "Żary, Polska",
+        "gps" : {
+          "latitude" : 50.164472354392345,
+          "longitude" : 19.709588207812438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Kowal",
+      "ratingsum" : 10,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "cienki mur",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 3
+    },
     "mala-skala" : {
       "author" : "Marek Cisek",
       "date" : 1545440845263,
@@ -234,7 +212,7 @@
         "region" : "małopolskie"
       },
       "name" : "Mała Skała",
-      "ratingsum" : 0,
+      "ratingsum" : 3,
       "rockType" : "Piaskowiec",
       "routes" : [ {
         "author" : "K. Mędrek",
@@ -255,7 +233,7 @@
         "votes" : 1,
         "year" : "2011"
       } ],
-      "votes" : 0
+      "votes" : 1
     },
     "masywne-granie" : {
       "author" : "Marek Cisek",
@@ -272,6 +250,76 @@
         "region" : "małopolskie"
       },
       "name" : "Masywne Granie",
+      "ratingsum" : 4,
+      "rockType" : "Granit",
+      "routes" : [ {
+        "author" : "K. Mędrek",
+        "gradesum" : 26,
+        "name" : "Młynek",
+        "voters" : [ "XMR3ZQhrMQWxNQDX199lzWRsHeM2" ],
+        "votes" : 2,
+        "year" : "2012"
+      }, {
+        "author" : "K. Mędrek",
+        "gradesum" : 18,
+        "name" : "Kubek",
+        "votes" : 1,
+        "year" : "2012"
+      } ],
+      "voters" : [ "XMR3ZQhrMQWxNQDX199lzWRsHeM2" ],
+      "votes" : 1
+    },
+    "murowana" : {
+      "author" : "Marek Cisek",
+      "date" : 1545440845263,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "murowana",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhIRXJUXW36sbR_-F%2Forlik-topo.jpg?alt=media&token=232100cc-da90-4de9-836a-d3d79142e551",
+      "location" : {
+        "adress" : "Unnamed Road, Polska",
+        "gps" : {
+          "latitude" : 51.291014765204615,
+          "longitude" : 17.358513989062438
+        },
+        "region" : "dolnośląskie"
+      },
+      "name" : "Murowana",
+      "ratingsum" : 0,
+      "rockType" : "Zlepieniec",
+      "routes" : [ {
+        "author" : "M. Jakubiak",
+        "gradesum" : 6,
+        "name" : "wąs rogacza",
+        "votes" : 1,
+        "year" : "2015"
+      }, {
+        "author" : "M. Jakubiak",
+        "gradesum" : 15,
+        "name" : "ostra róża",
+        "votes" : 1,
+        "year" : "2015"
+      } ],
+      "votes" : 0
+    },
+    "męskie-granie" : {
+      "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Wanda Majewska",
+        "comment" : "Polecam również kobietom"
+      } ],
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, blandit reprimique adversarium mel ut. Mucius doctus recusabo id nam, ei choro perfecto corrumpit ius. Pri erat efficiendi te, ei quo dico omnes fierent. An sit consulatu sadipscing. Ei epicurei theophrastus pro, eirmod consequat et ius, habemus consequuntur eos in. Has laboramus tincidunt delicatissimi ut, id labores legimus sadipscing has. Ut tritani viderer sea.",
+      "id" : "męskie-granie",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBY685AF7v68B_muG8%2Forlik-topo.jpg?alt=media&token=822dee2b-c70a-4eed-9959-d2f38428cea3",
+      "location" : {
+        "adress" : "Unnamed Road, 32-241, Polska",
+        "gps" : {
+          "latitude" : 50.48711041605844,
+          "longitude" : 20.006219067187438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Męskie Granie",
       "ratingsum" : 0,
       "rockType" : "Granit",
       "routes" : [ {
@@ -291,6 +339,13 @@
     },
     "orlik" : {
       "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Halina Kot",
+        "comment" : "Dodam, że na tej skale łatwo się pokaleczyć - bardzo ostra."
+      }, {
+        "author" : "Maciej Lej",
+        "comment" : "Wybiorę się tam w przyszłym sezonie!"
+      } ],
       "date" : 1546436565056,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id" : "orlik",
@@ -326,6 +381,44 @@
         "year" : "2014"
       } ],
       "votes" : 0
+    },
+    "orzel" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "orzel",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDn-TcpuAnq3rOrIiT%2Forlik-topo.jpg?alt=media&token=e6270c21-fa7e-48c5-b33d-412989448d5a",
+      "location" : {
+        "adress" : "Unnamed Road, 32-540, Polska",
+        "gps" : {
+          "latitude" : 50.227769581517485,
+          "longitude" : 19.478875317187438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Orzeł",
+      "ratingsum" : 4,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 19,
+        "name" : "walka o gniazdo",
+        "votes" : 1,
+        "year" : "2014"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 16,
+        "name" : "kaczka dziwaczka",
+        "votes" : 1,
+        "year" : "2014"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 13,
+        "name" : "ciekły azot",
+        "votes" : 1,
+        "year" : "2014"
+      } ],
+      "votes" : 1
     },
     "piaskowa" : {
       "author" : "Marek Cisek",
@@ -367,6 +460,10 @@
     },
     "ponura-wydma" : {
       "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Wanda Majewska",
+        "comment" : "Na ponure dni - najlepsza"
+      } ],
       "date" : 1546435068565,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id" : "ponura-wydma",
@@ -399,6 +496,10 @@
     },
     "sarnia-skala" : {
       "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Karol Maj",
+        "comment" : "Przydało się! Pozdrawiam"
+      } ],
       "date" : 1545860636160,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id" : "sarnia-skala",
@@ -412,7 +513,7 @@
         "region" : "małopolskie"
       },
       "name" : "Sarnia Skała",
-      "ratingsum" : 0,
+      "ratingsum" : 5,
       "rockType" : "Andezyt",
       "routes" : [ {
         "author" : "M. Cisek",
@@ -427,10 +528,92 @@
         "votes" : 1,
         "year" : "2013"
       } ],
-      "votes" : 0
+      "voters" : [ "XMR3ZQhrMQWxNQDX199lzWRsHeM2" ],
+      "votes" : 1
+    },
+    "tempa-burza" : {
+      "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Halina Kot",
+        "comment" : "Ciekawy opis."
+      }, {
+        "author" : "Maciej Lej",
+        "comment" : "Dzięki za podpowiedzi!"
+      } ],
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "tempa-burza",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhq9ftvo2EeVrNC7z%2Forlik-topo.jpg?alt=media&token=6b451b5d-80d6-460d-8fd6-3442bdf6fefa",
+      "location" : {
+        "adress" : "Zakazana, Polska",
+        "gps" : {
+          "latitude" : 50.210195435856384,
+          "longitude" : 18.418694653124938
+        },
+        "region" : "śląskie"
+      },
+      "name" : "Tempa Burza",
+      "ratingsum" : 4,
+      "rockType" : "Wapień",
+      "routes" : [ {
+        "author" : "W. Skrok",
+        "gradesum" : 17,
+        "name" : "zakazana",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "W. Skrok",
+        "gradesum" : 15,
+        "name" : "ciekawy młokos",
+        "votes" : 1,
+        "year" : "2016"
+      } ],
+      "votes" : 1
+    },
+    "terenowa" : {
+      "author" : "Marek Cisek",
+      "date" : 1545860636160,
+      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "id" : "terenowa",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkyZX7iyF18o3xyVZ%2Forlik-topo.jpg?alt=media&token=ffbd5962-d33e-4a2a-a410-e86d7aaa58f2",
+      "location" : {
+        "adress" : "Unnamed Road, 43-600 Jaworzno, Polska",
+        "gps" : {
+          "latitude" : 50.220740700153065,
+          "longitude" : 19.434930004687438
+        },
+        "region" : "małopolskie"
+      },
+      "name" : "Terenowa",
+      "ratingsum" : 1,
+      "rockType" : "Piaskowiec",
+      "routes" : [ {
+        "author" : "M. Cisek",
+        "gradesum" : 15,
+        "name" : "czerwona",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 11,
+        "name" : "niebieska",
+        "votes" : 1,
+        "year" : "2016"
+      }, {
+        "author" : "M. Cisek",
+        "gradesum" : 23,
+        "name" : "czarna",
+        "votes" : 1,
+        "year" : "2016"
+      } ],
+      "votes" : 1
     },
     "tlumik" : {
       "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Maciej Lej",
+        "comment" : "Trudne drogi kształtują charakter ;)"
+      } ],
       "date" : 1545860636160,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id" : "tlumik",
@@ -460,286 +643,18 @@
         "year" : "2011"
       } ],
       "votes" : 0
-    },
-    "kowal" : {
-      "author" : "Marek Cisek",
-      "date" : 1545860636160,
-      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id" : "kowal",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkSmYvdgo4D-CBc95%2Forlik-topo.jpg?alt=media&token=af6d79c6-c686-4cd5-b0e3-b020f905ca7c",
-      "location" : {
-        "adress" : "Żary, Polska",
-        "gps" : {
-          "latitude" : 50.164472354392345,
-          "longitude" : 19.709588207812438
-        },
-        "region" : "małopolskie"
-      },
-      "name" : "Kowal",
-      "ratingsum" : 0,
-      "rockType" : "Piaskowiec",
-      "routes" : [ {
-        "author" : "M. Cisek",
-        "gradesum" : 15,
-        "name" : "cienki mur",
-        "votes" : 1,
-        "year" : "2013"
-      } ],
-      "votes" : 0
-    },
-    "tempa-burza" : {
-      "author" : "Marek Cisek",
-      "date" : 1545860636160,
-      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id" : "tempa-burza",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhq9ftvo2EeVrNC7z%2Forlik-topo.jpg?alt=media&token=6b451b5d-80d6-460d-8fd6-3442bdf6fefa",
-      "location" : {
-        "adress" : "Zakazana, Polska",
-        "gps" : {
-          "latitude" : 50.210195435856384,
-          "longitude" : 18.418694653124938
-        },
-        "region" : "śląskie"
-      },
-      "name" : "Tempa Burza",
-      "ratingsum" : 0,
-      "rockType" : "Wapień",
-      "routes" : [ {
-        "author" : "W. Skrok",
-        "gradesum" : 17,
-        "name" : "zakazana",
-        "votes" : 1,
-        "year" : "2016"
-      }, {
-        "author" : "W. Skrok",
-        "gradesum" : 15,
-        "name" : "ciekawy młokos",
-        "votes" : 1,
-        "year" : "2016"
-      } ],
-      "votes" : 0
-    },
-    "dawna-skala" : {
-      "author" : "Marek Cisek",
-      "date" : 1545860636160,
-      "description" : "Niewielka skała z łatwymi drogami. Teren leśny.",
-      "id" : "dawna-skala",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBR0Pp2XzjZiWVybfu%2Forlik-topo.jpg?alt=media&token=b54fba77-3184-4eb4-b797-13d4bb622c1c",
-      "location" : {
-        "adress" : "Pod Sokolicą 121, 32-089 Będkowice, Polska",
-        "gps" : {
-          "latitude" : 50.172981,
-          "longitude" : 19.740790100000027
-        },
-        "region" : "małopolskie"
-      },
-      "name" : "Dawna Skała",
-      "ratingsum" : 0,
-      "rockType" : "Piaskowiec",
-      "routes" : [ {
-        "author" : "K. Mędrek",
-        "gradesum" : 6,
-        "name" : "Wyciek",
-        "votes" : 1,
-        "year" : "2010"
-      }, {
-        "author" : "K. Mędrek",
-        "gradesum" : 12,
-        "name" : "Korek",
-        "votes" : 1,
-        "year" : "2010"
-      }, {
-        "author" : "K. Mędrek",
-        "gradesum" : 18,
-        "name" : "Wanda",
-        "votes" : 1,
-        "year" : "2011"
-      } ],
-      "votes" : 0
-    },
-    "męskie-granie" : {
-      "author" : "Marek Cisek",
-      "date" : 1545860636160,
-      "description" : "Lorem ipsum dolor sit amet, blandit reprimique adversarium mel ut. Mucius doctus recusabo id nam, ei choro perfecto corrumpit ius. Pri erat efficiendi te, ei quo dico omnes fierent. An sit consulatu sadipscing. Ei epicurei theophrastus pro, eirmod consequat et ius, habemus consequuntur eos in. Has laboramus tincidunt delicatissimi ut, id labores legimus sadipscing has. Ut tritani viderer sea.",
-      "id" : "męskie-granie",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVBY685AF7v68B_muG8%2Forlik-topo.jpg?alt=media&token=822dee2b-c70a-4eed-9959-d2f38428cea3",
-      "location" : {
-        "adress" : "Unnamed Road, 32-241, Polska",
-        "gps" : {
-          "latitude" : 50.48711041605844,
-          "longitude" : 20.006219067187438
-        },
-        "region" : "małopolskie"
-      },
-      "name" : "Męskie Granie",
-      "ratingsum" : 0,
-      "rockType" : "Granit",
-      "routes" : [ {
-        "author" : "K. Mędrek",
-        "gradesum" : 16,
-        "name" : "Młynek",
-        "votes" : 1,
-        "year" : "2012"
-      }, {
-        "author" : "K. Mędrek",
-        "gradesum" : 18,
-        "name" : "Kubek",
-        "votes" : 1,
-        "year" : "2012"
-      } ],
-      "votes" : 0
-    },
-    "orzel" : {
-      "author" : "Marek Cisek",
-      "date" : 1545860636160,
-      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id" : "orzel",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDn-TcpuAnq3rOrIiT%2Forlik-topo.jpg?alt=media&token=e6270c21-fa7e-48c5-b33d-412989448d5a",
-      "location" : {
-        "adress" : "Unnamed Road, 32-540, Polska",
-        "gps" : {
-          "latitude" : 50.227769581517485,
-          "longitude" : 19.478875317187438
-        },
-        "region" : "małopolskie"
-      },
-      "name" : "Orzeł",
-      "ratingsum" : 0,
-      "rockType" : "Piaskowiec",
-      "routes" : [ {
-        "author" : "M. Cisek",
-        "gradesum" : 19,
-        "name" : "walka o gniazdo",
-        "votes" : 1,
-        "year" : "2014"
-      }, {
-        "author" : "M. Cisek",
-        "gradesum" : 16,
-        "name" : "kaczka dziwaczka",
-        "votes" : 1,
-        "year" : "2014"
-      }, {
-        "author" : "M. Cisek",
-        "gradesum" : 13,
-        "name" : "ciekły azot",
-        "votes" : 1,
-        "year" : "2014"
-      } ],
-      "votes" : 0
-    },
-    "terenowa" : {
-      "author" : "Marek Cisek",
-      "date" : 1545860636160,
-      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id" : "terenowa",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDkyZX7iyF18o3xyVZ%2Forlik-topo.jpg?alt=media&token=ffbd5962-d33e-4a2a-a410-e86d7aaa58f2",
-      "location" : {
-        "adress" : "Unnamed Road, 43-600 Jaworzno, Polska",
-        "gps" : {
-          "latitude" : 50.220740700153065,
-          "longitude" : 19.434930004687438
-        },
-        "region" : "małopolskie"
-      },
-      "name" : "Terenowa",
-      "ratingsum" : 0,
-      "rockType" : "Piaskowiec",
-      "routes" : [ {
-        "author" : "M. Cisek",
-        "gradesum" : 15,
-        "name" : "czerwona",
-        "votes" : 1,
-        "year" : "2016"
-      }, {
-        "author" : "M. Cisek",
-        "gradesum" : 11,
-        "name" : "niebieska",
-        "votes" : 1,
-        "year" : "2016"
-      }, {
-        "author" : "M. Cisek",
-        "gradesum" : 23,
-        "name" : "czarna",
-        "votes" : 1,
-        "year" : "2016"
-      } ],
-      "votes" : 0
-    },
-    "murowana" : {
-      "author" : "Marek Cisek",
-      "date" : 1545440845263,
-      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id" : "murowana",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDhIRXJUXW36sbR_-F%2Forlik-topo.jpg?alt=media&token=232100cc-da90-4de9-836a-d3d79142e551",
-      "location" : {
-        "adress" : "Unnamed Road, Polska",
-        "gps" : {
-          "latitude" : 51.291014765204615,
-          "longitude" : 17.358513989062438
-        },
-        "region" : "dolnośląskie"
-      },
-      "name" : "Murowana",
-      "ratingsum" : 0,
-      "rockType" : "Zlepieniec",
-      "routes" : [ {
-        "author" : "M. Jakubiak",
-        "gradesum" : 6,
-        "name" : "wąs rogacza",
-        "votes" : 1,
-        "year" : "2015"
-      }, {
-        "author" : "M. Jakubiak",
-        "gradesum" : 15,
-        "name" : "ostra róża",
-        "votes" : 1,
-        "year" : "2015"
-      } ],
-      "votes" : 0
-    },
-    "kamieniolom" : {
-      "author" : "Marek Cisek",
-      "date" : 1545440845263,
-      "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "id" : "kamieniolom",
-      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVDjB0XoeOlAtCD4zQU%2Forlik-topo.jpg?alt=media&token=7c988deb-115d-44a0-beb0-b74b4982d19b",
-      "location" : {
-        "adress" : "DW791, Polska",
-        "gps" : {
-          "latitude" : 50.18558075451216,
-          "longitude" : 19.500847973437438
-        },
-        "region" : "małopolskie"
-      },
-      "name" : "Kamieniołom",
-      "ratingsum" : 0,
-      "rockType" : "Andezyt",
-      "routes" : [ {
-        "author" : "M. Cisek",
-        "gradesum" : 17,
-        "name" : "mała rysa",
-        "votes" : 1,
-        "year" : "2013"
-      }, {
-        "author" : "M. Cisek",
-        "gradesum" : 20,
-        "name" : "duża rysa",
-        "votes" : 1,
-        "year" : "2013"
-      } ],
-      "votes" : 0
     }
   },
   "users" : {
     "BQXEnd7OOAdYZoSBk2OmeiH2MCa2" : {
-      "firstName" : "Adam",
-      "lastLoggedIn" : 1545440845263,
-      "lastName" : "Pałka"
+      "firstName" : "Wojtek",
+      "lastLoggedIn" : 1546720477807,
+      "lastName" : "Kobyła"
     },
     "XMR3ZQhrMQWxNQDX199lzWRsHeM2" : {
-      "firstName" : "Marek",
-      "lastLoggedIn" : 1546356424934,
-      "lastName" : "Cisek",
+      "firstName" : "Wanda",
+      "lastLoggedIn" : 1546613810014,
+      "lastName" : "Majewska",
       "signedUp" : 1545860636160
     }
   }

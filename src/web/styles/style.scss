@@ -27,6 +27,10 @@ body {
   margin-bottom: 10vh;
 }
 
+.card-img-top {
+  height: 20em;
+}
+
 .btn {
   i {
     font-size: 0.8rem;
@@ -67,6 +71,7 @@ body {
 .parallax--articles {
   .react-parallax-bgimage {
     filter: brightness(50%) !important;
+    top: -100px;
   }
 }
 

@@ -2,14 +2,10 @@
   "rules": {
     ".read": false,
     ".write": false,
-    "meals": {
-      ".read": true
-    },
-    "recipes": {
+    "rocks": {
       ".read": true,
-      ".indexOn": [
-        "category"
-      ]
+        ".write": "auth != null",
+      ".indexOn": ["name"]
     },
     "users": {
       "$uid": {
@@ -30,12 +26,6 @@
         "role": {
           ".validate": "(root.child('users/'+auth.uid+'/role').val() === 'admin' && newData.val() === 'admin') || newData.val() === 'user'"
         }
-      }
-    },
-    "favourites": {
-      "$uid": {
-        ".read": "auth != null && auth.uid == $uid",
-        ".write": "auth != null && auth.uid == $uid"
       }
     }
   }

@@ -308,10 +308,10 @@ class RockView extends React.Component {
         </Row>
         <Row style={{alignItems: 'center'}}>
           <Col className="py-3" sm="8">
-            <Link className="btn btn-secondary" to="/rocks">
+            <Link className="btn btn-secondary" to="/search">
               <i className="icon-arrow-left" />
               {' '}
-              Powrót do szukania
+              Szukaj innych skał
             </Link>
           </Col>
           {loggedIn ? (

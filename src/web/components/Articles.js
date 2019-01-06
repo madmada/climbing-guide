@@ -49,7 +49,7 @@ const ArticleListing = ({ error, loading, rocks }) => {
               Artykuły
             </h1>
             <h3 className="font-weight-light" style={{ color: '#adadad' }}>
-              Przeglądaj nasze artykuły
+              Przeglądaj nasze najnowsze skały
             </h3>
           </div>
         </div>

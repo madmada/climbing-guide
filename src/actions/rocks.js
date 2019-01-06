@@ -13,8 +13,23 @@ export function setError(message) {
   })));
 }
 
+export function getNewestRocks() {
+  if (Firebase === null) return () => new Promise(resolve => resolve().then('Firebase connection problem'));
+
+  return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('date').limitToLast(15)
+    .on('value', (snapshot) => {
+      let rocks = snapshot.val() || [];
+      rocks = _.orderBy(rocks, 'date', 'desc');
+
+      return resolve(dispatch({
+        type: 'ROCKS_REPLACE',
+        data: Object.values(rocks),
+      }));
+    })).then(console.log('Newest rock articles fetched')).catch(e => console.log(e));
+}
+
 export function getRocks() {
-  if (Firebase === null) return () => new Promise(resolve => resolve());
+  if (Firebase === null) return () => new Promise(resolve => resolve().then('Firebase connection problem'));
 
   return dispatch => new Promise(resolve => FirebaseRef.child('rocks').orderByChild('name')
     .on('value', (snapshot) => {
@@ -24,7 +39,7 @@ export function getRocks() {
         type: 'ROCKS_REPLACE',
         data: Object.values(rocks),
       }));
-    })).catch(e => console.log(e));
+    })).then(console.log('Rocks fetched')).catch(e => console.log(e));
 }
 
 export function updateRock(data) {
