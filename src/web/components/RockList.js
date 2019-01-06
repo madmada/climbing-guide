@@ -81,6 +81,7 @@ class RockListing extends React.Component {
       region: '',
       rockType: '',
       sortBy: '',
+      popoverOpen: false,
     });
     searchRocks(clearData);
   }
@@ -129,7 +130,7 @@ class RockListing extends React.Component {
             </h1>
           </Col>
         </Row>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} onClick={() => this.setState({ popoverOpen: false })}>
           <Row>
             <Col lg={3}>
               <FormGroup>
@@ -141,6 +142,7 @@ class RockListing extends React.Component {
                   value={name}
                   autoComplete="off"
                   onChange={this.handleChange}
+                  pattern="[a-zA-Z]*"
                 />
                 <FilterResults
                   value={name}

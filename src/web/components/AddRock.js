@@ -211,7 +211,7 @@ class AddRock extends React.Component {
           <Label for="rock-number" sm={1}>{index + 1}:</Label>
           <Col sm={3}>
             <FormGroup>
-              <Input type="text" name="name" id={`name-${index}`} tabIndex={index} value={routes.name} placeholder="nazwa" onChange={this.handleRouteChange} />
+              <Input type="text" name="name" id={`name-${index}`} tabIndex={index} value={routes.name} placeholder="nazwa" onChange={this.handleRouteChange} pattern="[a-zA-Z]*" />
             </FormGroup>
           </Col>
           <Col sm={3}>
@@ -273,6 +273,7 @@ class AddRock extends React.Component {
                       placeholder="Sarnia Skała"
                       value={name}
                       onChange={this.handleChange}
+                      pattern="[a-zA-Z]*"
                     />
                   </FormGroup>
                   <FormGroup>

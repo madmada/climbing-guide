@@ -19,7 +19,7 @@ const SidebarNavItems = () => (
         <i className="icon-magnifier" />
         {' '}
         <span>
-          Wyszukaj
+          Szukaj
         </span>
       </Link>
     </NavItem>
