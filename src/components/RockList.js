@@ -13,9 +13,9 @@ import {
   Button,
 } from 'reactstrap';
 import { Redirect } from 'react-router';
-import rockTypes from '../../constants/rockTypes';
-import regionTypes from '../../constants/regionTypes';
-import { renderRatingStars, getRate, timestampToDate, scrollTop } from '../../helpers';
+import rockTypes from '../constants/rockTypes';
+import regionTypes from '../constants/regionTypes';
+import { renderRatingStars, getRate, timestampToDate, scrollTop } from '../helpers';
 import Error from './Error';
 import Loading from './Loading';
 

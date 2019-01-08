@@ -22,9 +22,6 @@
         },
         "signedUp": {
           ".validate": "newData.val() <= now"
-        },
-        "role": {
-          ".validate": "(root.child('users/'+auth.uid+'/role').val() === 'admin' && newData.val() === 'admin') || newData.val() === 'user'"
         }
       }
     }

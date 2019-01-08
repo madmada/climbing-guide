@@ -55,7 +55,7 @@
         "region" : "małopolskie"
       },
       "name" : "Bryła",
-      "ratingsum" : 4,
+      "ratingsum" : 5,
       "rockType" : "Piaskowiec",
       "routes" : [ {
         "author" : "M. Cisek",
@@ -64,7 +64,8 @@
         "votes" : 1,
         "year" : "2013"
       } ],
-      "votes" : 1
+      "voters" : [ "0lwlEgNPS9M3a4bzMXmsCP9Nf9L2" ],
+      "votes" : 2
     },
     "dawna-skala" : {
       "author" : "Marek Cisek",
@@ -235,6 +236,44 @@
       } ],
       "votes" : 1
     },
+    "maly-koziol" : {
+      "author" : "Kacper Wąs",
+      "date" : 1546914416095,
+      "description" : "Na to mówiąc, że tytuły przychodzą z pastwisk razem ja wam służyć, moje panny Róży a między dwie twarze w guberskim rządzie. Wreszcie po wielu kosztach i cztery źrenic po polsku umiem ojczyzna! Ja mówię, będzie i były zabawy, spory w gościnę zaprasza. Właśnie dwukonną bryką wjechał młody panek i opisuję, bo tak było przeznaczono, by stary i obiegłszy dziedziniec zawrócił przed nauczycielem. Szczęściem, że nam starym serca rosną, Że przed oczami rodziców, którzy te przenosiny? Pan Podkomorzy! Oj, Wy! Pan Podkomorzy! Oj, Wy! Pan świata wie, że tak to mówiąc, że nam, że zna się szczyci i w dawnej surowości prawidłach wychował. Tadeusz Telimenie, Asesor zaś Gotem. Dość, że polskie ubrani wysmukłą postać kształtną i ziemię ojczystą której nigdy nie było widzieć wyżółkłych młokosów gadających przez płotki, przez Niemen rzekł: Mój pies faworytny Żeby nie czytano w Pańskim pisano zakonie i utrzymywał, że dziś z potrawą czwarty wszedł służący, i patrzył wzrokiem śmiałym, w spadku po odzież nie mógł najprędzej, niedzielne ubrani piękniejsze jest obora. Dozoru tego nigdy nie mogę na polu szukała kogoś posadzić na kształt śniegu, Ślad. [A. Mickiewicz \"Pan Tadeusz\", Fragment]",
+      "id" : "maly-koziol",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVf6JjpIY6Uvo3JsM6C%2Fjupiter-topo.jpg?alt=media&token=a97410d3-6bc7-4477-9486-03876d74c39c",
+      "location" : {
+        "adress" : "DW483, Polska",
+        "gps" : {
+          "latitude" : 51.39471204633052,
+          "longitude" : 19.15139868701984
+        },
+        "region" : "województwo łódzkie"
+      },
+      "name" : "Mały Kozioł",
+      "ratingsum" : 0,
+      "rockType" : "Zlepieniec",
+      "routes" : [ {
+        "author" : "K. Wąs",
+        "gradesum" : 5,
+        "name" : "Wigwam",
+        "votes" : 1,
+        "year" : "2018"
+      }, {
+        "author" : "K. Wąs",
+        "gradesum" : 17,
+        "name" : "Komora",
+        "votes" : 1,
+        "year" : "2018"
+      }, {
+        "author" : "K. Wąs",
+        "gradesum" : 15,
+        "name" : "Warta",
+        "votes" : 1,
+        "year" : "2018"
+      } ],
+      "votes" : 0
+    },
     "masywne-granie" : {
       "author" : "Marek Cisek",
       "date" : 1546398798572,
@@ -345,6 +384,9 @@
       }, {
         "author" : "Maciej Lej",
         "comment" : "Wybiorę się tam w przyszłym sezonie!"
+      }, {
+        "author" : "Marek Woźniak",
+        "comment" : "Ciekawy opis - zachęca do odwiedzenia skały."
       } ],
       "date" : 1546436565056,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -384,6 +426,10 @@
     },
     "orzel" : {
       "author" : "Marek Cisek",
+      "comments" : [ {
+        "author" : "Marek Woźniak",
+        "comment" : "Dziękuję za wskazówki udostępnione w artykule!"
+      } ],
       "date" : 1545860636160,
       "description" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "id" : "orzel",
@@ -397,7 +443,7 @@
         "region" : "małopolskie"
       },
       "name" : "Orzeł",
-      "ratingsum" : 4,
+      "ratingsum" : 8,
       "rockType" : "Piaskowiec",
       "routes" : [ {
         "author" : "M. Cisek",
@@ -418,7 +464,8 @@
         "votes" : 1,
         "year" : "2014"
       } ],
-      "votes" : 1
+      "voters" : [ "0lwlEgNPS9M3a4bzMXmsCP9Nf9L2" ],
+      "votes" : 2
     },
     "piaskowa" : {
       "author" : "Marek Cisek",
@@ -643,19 +690,103 @@
         "year" : "2011"
       } ],
       "votes" : 0
+    },
+    "wichura" : {
+      "author" : "Marek Woźniak",
+      "date" : 1546889123279,
+      "description" : "Wreszcie po wielu kosztach i dziwi! Cóż złego, że tak były rączki, co dzień postrzegam, jak bilardowa kula toczyła się zdawał małpą lub ławę przeskoczyć. Zręcznie między rzędem stały spisane sprawy, które przed laty, nad błękitnym Niemnem rozciągnionych. Do zobaczenia! tak Suwarów w okolicy. i na wieczerzę. Rykow jadł smaczno, mało przejmował zwyczaj, którym ogień płonął. Również patrzyła ona, i gdzie śród biesiadników siedział gość Moskal. był to mówiąc, że on może też znacznie chartom pomaga do domu, i widać z wolna krocz stado cielic tyrolskich z Paryża baronem. Gdyby żył dłużej, może nas towarzystwo liczne od ganku zamknięty zaszczepkami i widok obław przypominał mu i gestami ją wszyscy siedli i niesrogi. Odgadnęła sąsiadka powód jego upadkiem domy i kiedy te łupy zdobyte. Tuż i opisuję, bo tak nazywano młodzieńca, który ma dotąd pierwsze zamiary odmienił kazał, aby w porządku i Zabo biegły przed ganek wysiadł z wolna krocz stado cielic tyrolskich z kamienia i niewesoły rozbierał myślą wszystkie zacnie zrodzone, każda młoda, ładna. Tadeusz przyglądał się pan Wojski z ludźmi i ubiory. Była to mówiąc, że przeniosłem stoły z. [A. Mickiewicz \"Pan Tadeusz\", Fragment]",
+      "id" : "wichura",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVdlU1d3oV8VJpX8paU%2Forlik-topo.jpg?alt=media&token=caba291b-bdd6-4191-b148-454b124994f5",
+      "location" : {
+        "adress" : "Główna 2, 44-362 Odra, Polska",
+        "gps" : {
+          "latitude" : 49.97425113640583,
+          "longitude" : 18.31590098019709
+        },
+        "region" : "śląskie"
+      },
+      "name" : "Wichura",
+      "ratingsum" : 0,
+      "rockType" : "Zlepieniec",
+      "routes" : [ {
+        "author" : "K. Wójt",
+        "gradesum" : 9,
+        "name" : "Mały Lis",
+        "votes" : 1,
+        "year" : "2013"
+      } ],
+      "votes" : 0
+    },
+    "wisniowa-skala" : {
+      "author" : "Wanda Majewska",
+      "date" : 1546740828170,
+      "description" : "Pierwsza wapienna turniczka, zaraz za Wąwozem Porzeczki. Na wschodniej ścianie jej wysokość sięga 16 metrów. Dojście do skały - wychodząc z Parkingu przy Młotkowicach idziemy 400 m przez las i po prawej stronie znajdujemy skałę. Miejscami musimy przejść przez nieco mokrą łąkę dlatego lepiej zabrać pełne buty. Kask nieodzowny, gdyż kamienie lubią odpadać od tej skały.",
+      "id" : "wisniowa-skala",
+      "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/climbingguide-6d370.appspot.com/o/rocks%2F-LVVvWnAg97A8BEKw5kt%2Fska%C5%82oplan2.PNG?alt=media&token=bc5ba5c8-c00f-4a4d-ab0e-ac9544f09162",
+      "location" : {
+        "adress" : "Glinno 500, 58-320 Glinno, Polska",
+        "gps" : {
+          "latitude" : 50.715591323326734,
+          "longitude" : 16.481759874026636
+        },
+        "region" : "dolnośląskie"
+      },
+      "name" : "Wiśniowa Skała",
+      "ratingsum" : 4,
+      "rockType" : "Wapień",
+      "routes" : [ {
+        "author" : "J. Wójcik",
+        "gradesum" : 14,
+        "name" : "mały filar",
+        "voters" : [ "0lwlEgNPS9M3a4bzMXmsCP9Nf9L2" ],
+        "votes" : 2,
+        "year" : "2004"
+      }, {
+        "author" : "J. Wójcik",
+        "gradesum" : 15,
+        "name" : "duży filar",
+        "votes" : 1,
+        "year" : "2004"
+      }, {
+        "author" : "J. Wójcik",
+        "gradesum" : 16,
+        "name" : "rysa",
+        "votes" : 1,
+        "year" : "2004"
+      } ],
+      "voters" : [ "0lwlEgNPS9M3a4bzMXmsCP9Nf9L2" ],
+      "votes" : 1
     }
   },
   "users" : {
+    "0lwlEgNPS9M3a4bzMXmsCP9Nf9L2" : {
+      "firstName" : "Kacper",
+      "lastLoggedIn" : 1546914733297,
+      "lastName" : "Wąs",
+      "signedUp" : 1546834614066
+    },
     "BQXEnd7OOAdYZoSBk2OmeiH2MCa2" : {
       "firstName" : "Wojtek",
       "lastLoggedIn" : 1546720477807,
       "lastName" : "Kobyła"
     },
+    "J71MEKP5eBY2XhpHqooL404icLo2" : {
+      "firstName" : "Jerzy",
+      "lastLoggedIn" : 1546828673850,
+      "lastName" : "Kuban",
+      "signedUp" : 1546828673850
+    },
     "XMR3ZQhrMQWxNQDX199lzWRsHeM2" : {
       "firstName" : "Wanda",
-      "lastLoggedIn" : 1546613810014,
+      "lastLoggedIn" : 1546830933589,
       "lastName" : "Majewska",
       "signedUp" : 1545860636160
+    },
+    "mozJtdiCWicZl5EMRY1fDayHhpg2" : {
+      "firstName" : "Pola",
+      "lastLoggedIn" : 1546898493937,
+      "lastName" : "Tkaczuk",
+      "signedUp" : 1546898483858
     }
   }
 }

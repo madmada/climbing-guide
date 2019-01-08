@@ -18,12 +18,12 @@ import {
   Modal,
 } from 'reactstrap';
 import { Parallax } from 'react-parallax';
-import ErrorMessages from '../../constants/errors';
+import { renderRatingStars, getRate, getGrade, compareNames } from '../helpers';
+import ErrorMessages from '../constants/errors';
 import Loading from './Loading';
 import Error from './Error';
 import GoogleMap from './GoogleMap';
-import { renderRatingStars, getRate, getGrade, compareNames } from '../../helpers';
-import scale from '../../constants/cracowScale';
+import scale from '../constants/cracowScale';
 import Rating from './RatingStars';
 
 const image1 = 'https://images.pexels.com/photos/303040/pexels-photo-303040.jpeg?auto=compress&cs=tinysrgb&h=650&w=940';

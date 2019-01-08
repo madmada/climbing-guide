@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { getRocks, getNewestRocks, getFilteredRocks, updateRock } from '../actions/rocks';
-import ArticleListing from '../web/components/Articles';
+import ArticleListing from '../components/Articles';
 
 class RockContainer extends Component {
   static propTypes = {

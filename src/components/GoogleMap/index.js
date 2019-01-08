@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import mapStyle from './MapOptions/styles';
-import Config from '../../../constants/config';
+import Config from '../../constants/config';
 
 const Marker = ({ text }) => (
   <i

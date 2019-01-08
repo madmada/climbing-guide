@@ -2,8 +2,8 @@ import React from 'react';
 import GoogleMapGeoPicker from 'react-geo-picker/lib/google-map';
 import Geocode from 'react-geocode';
 import { Button } from 'reactstrap';
-import Config from '../../constants/config';
-import { getRegion } from '../../helpers';
+import Config from '../constants/config';
+import { getRegion } from '../helpers';
 
 Geocode.setApiKey(Config.gMapApiKey);
 

@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/es/integration/react';
 
-import configureStore from '../store/index';
+import configureStore from './store/index';
 import Routes from './routes/index';
-import ScrollToTop from './scrollToTop';
+import ScrollToTop from './components/scrollToTop';
 
 // Components
 import Loading from './components/Loading';

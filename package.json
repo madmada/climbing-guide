@@ -38,14 +38,12 @@
     "webpack-dev-server": "^3.1.10",
     "webpack-hot-middleware": "^2.22.3"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "test": "node node_modules/jest/bin/jest.js --watch",
-    "web": "webpack-dev-server --content-base build/ --config webpack/web.dev.config.js --mode development --port 3001 --inline --hot --colors --historyApiFallback",
+    "web": "webpack-dev-server --content-base public/ --config webpack/web.dev.config.js --mode development --port 3001 --inline --hot --colors --historyApiFallback",
     "web-bundle": "webpack --config webpack/web.prod.config.js --progress --colors --mode production",
     "predeploy": "npm run web-bundle",
-    "deploy": "gh-pages -d build",
-    "clear-cache": "node ./scripts/clear-cache.js",
+    "deploy": "firebase debloy",
     "debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=19001'"
   },
   "jest": {

@@ -7,28 +7,28 @@ import TemplateSidebar from '../components/TemplateSidebar';
 
 // Routes
 import Home from '../components/Home';
-import Member from '../../containers/Member';
+import Member from '../containers/Member';
 
 import ArticlesComponent from '../components/Articles';
 
-import RocksContainer from '../../containers/Rocks';
+import RocksContainer from '../containers/Rocks';
 import RocksComponent from '../components/RockList';
 import RockViewComponent from '../components/Rock';
 
 
-import AddRockContaier from '../../containers/AddRock';
+import AddRockContaier from '../containers/AddRock';
 import AddRockComponent from '../components/AddRock';
 
-import SignUpContainer from '../../containers/SignUp';
+import SignUpContainer from '../containers/SignUp';
 import SignUpComponent from '../components/SignUp';
 
-import LoginContainer from '../../containers/Login';
+import LoginContainer from '../containers/Login';
 import LoginComponent from '../components/Login';
 
-import ForgotPasswordContainer from '../../containers/ForgotPassword';
+import ForgotPasswordContainer from '../containers/ForgotPassword';
 import ForgotPasswordComponent from '../components/ForgotPassword';
 
-import UpdateProfileContainer from '../../containers/UpdateProfile';
+import UpdateProfileContainer from '../containers/UpdateProfile';
 import UpdateProfileComponent from '../components/UpdateProfile';
 
 import Error from '../components/Error';

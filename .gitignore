@@ -9,4 +9,3 @@ npm-debug.*
 
 # Build
 build/bundle.js
-dist/bundle.js
