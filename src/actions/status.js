@@ -14,7 +14,6 @@ export default function (dispatch, type, val) {
     if (!val) {
       if (type === 'success') message = 'Sukces';
       if (type === 'error') message = 'Wystąpił problem';
-      if (type === 'info') message = 'Coś się dzieje...';
       if (type === 'loading' && val !== false) message = true;
     }
 
