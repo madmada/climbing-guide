@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'reactstrap';
 import Member from '../containers/Member';
-import Header from './Header';
+import TopBar from './TopBar';
 import Footer from './Footer';
 import { Sidebar } from './Sidebar';
 
 const Template = ({ children }) => (
   <div>
-    <Member Layout={Header} />
+    <Member Layout={TopBar} />
     <Container fluid>
       <Row>
         <Sidebar />

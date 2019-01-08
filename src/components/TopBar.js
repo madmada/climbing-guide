@@ -14,7 +14,7 @@ import { Link, withRouter } from 'react-router-dom';
 import Config from '../constants/config';
 import { SidebarNavItems } from './Sidebar';
 
-class Header extends Component {
+class TopBar extends Component {
   static propTypes = {
     member: PropTypes.shape({
       firstName: PropTypes.string,
@@ -111,4 +111,4 @@ class Header extends Component {
   }
 }
 
-export default withRouter(Header);
+export default withRouter(TopBar);

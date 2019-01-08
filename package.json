@@ -56,10 +56,8 @@
     "cssnano": "^4.1.0",
     "expo": "^29.0.0",
     "firebase": "^5.4.1",
-    "gh-pages": "^2.0.1",
     "google-map-react": "^1.1.1",
     "lodash.kebabcase": "^4.1.1",
-    "native-base": "^2.4.2",
     "postcss-cssnext": "^3.1.0",
     "postcss-import": "^12.0.0",
     "prop-types": "^15.6.1",
@@ -70,8 +68,6 @@
     "react-geo-picker": "^0.2.4",
     "react-geocode": "^0.1.2",
     "react-google-maps": "^9.4.5",
-    "react-native": "~0.55.4",
-    "react-native-router-flux": "4.0.1",
     "react-parallax": "^2.0.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
@@ -80,7 +76,6 @@
     "redux": "^4.0.0",
     "redux-persist": "^5.9.1",
     "redux-thunk": "^2.2.0",
-    "sugarss": "^2.0.0",
-    "supercluster": "^5.0.0"
+    "sugarss": "^2.0.0"
   }
 }
