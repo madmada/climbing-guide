@@ -11,8 +11,11 @@ export default {
   missingLastName: 'Brakujące pole: Nazwisko',
   missingEmail: 'Brakujące pole: Email',
   missingPassword: 'Brakujące pole: Hasło',
-  passwordsDontMatch: 'Podane hasła się różnią',
+  passwordsDontMatch: 'Podane hasła nie są identyczne',
+  passwordTooShort: 'Hasło powinno zawierać co najmniej 6 znaków',
   authorizeProblem: 'Wystąpił problem z uwierzytelnianiem',
+  emailBadlyFormatted: 'Źle sformatowany e-mail',
+  user404: 'Użytkownik o podanym mailu nie został odnaleziony',
 
   // Rocks
   missingRockName: 'Brakujące pole: Nazwa Skały',

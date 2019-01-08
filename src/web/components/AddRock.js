@@ -181,7 +181,7 @@ class AddRock extends React.Component {
 
     const loggedIn = !!(member && member.email);
 
-    const renderScale = Object.values(scale).map(item => <option>{item}</option>);
+    const renderScale = Object.values(scale).map(item => <option key={item}>{item}</option>);
 
     const LogInInfo = (
       <Alert color="danger">
@@ -206,12 +206,21 @@ class AddRock extends React.Component {
     );
 
     const addRoutes = routes.map((item, index) => (
-      <Fragment>
-        <Row form key={index}>
+      <Fragment key={index}>
+        <Row form>
           <Label for="rock-number" sm={1}>{index + 1}:</Label>
           <Col sm={3}>
             <FormGroup>
-              <Input type="text" name="name" id={`name-${index}`} tabIndex={index} value={routes.name} placeholder="nazwa" onChange={this.handleRouteChange} pattern="[a-zA-Z]*" />
+              <Input
+                type="text"
+                name="name"
+                id={`name-${index}`}
+                tabIndex={index}
+                value={routes.name}
+                placeholder="nazwa"
+                onChange={this.handleRouteChange}
+                pattern="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]*"
+              />
             </FormGroup>
           </Col>
           <Col sm={3}>
@@ -222,7 +231,7 @@ class AddRock extends React.Component {
           <Col xs={6} sm={2}>
             <FormGroup>
               <Input type="select" name="grade" id={`grade-${index}`} tabIndex={index} onChange={this.handleRouteChange} defaultValue="Wycena">
-                <option disabled>Wycena</option>
+                <option disabled key="default">Wycena</option>
                 {renderScale}
               </Input>
             </FormGroup>
@@ -273,7 +282,7 @@ class AddRock extends React.Component {
                       placeholder="Sarnia Skała"
                       value={name}
                       onChange={this.handleChange}
-                      pattern="[a-zA-Z]*"
+                      pattern="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]*"
                     />
                   </FormGroup>
                   <FormGroup>
@@ -292,8 +301,8 @@ class AddRock extends React.Component {
                   <FormGroup>
                     <Label for="rockType">Rodzaj skały</Label>
                     <Input type="select" name="rockType" id="rockType" onChange={this.handleChange} defaultValue="Wybierz rodzaj">
-                      <option disabled>Wybierz rodzaj</option>
-                      {rockTypes.map(item => <option>{item}</option>)}
+                      <option disabled key="default">Wybierz rodzaj</option>
+                      {rockTypes.map(item => <option key={item}>{item}</option>)}
                     </Input>
                   </FormGroup>
                   <FormGroup>

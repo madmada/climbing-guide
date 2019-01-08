@@ -36,15 +36,17 @@ class RockView extends React.Component {
       uid: PropTypes.string,
     }),
     error: PropTypes.string,
-    loading: PropTypes.bool.isRequired,
+    loading: PropTypes.bool,
     onFormSubmit: PropTypes.func.isRequired,
     rockId: PropTypes.string.isRequired,
-    rocks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    rocks: PropTypes.arrayOf(PropTypes.shape()),
   }
 
   static defaultProps = {
     error: null,
+    rocks: {},
     member: {},
+    loading: true,
   }
 
   constructor(props) {
@@ -218,19 +220,19 @@ class RockView extends React.Component {
             </div>
           </div>
         </Parallax>
-        <Row style={{ position: 'relative', top: '-30px' }}>
+        <Row style={{ position: 'relative', top: '-35px', display: 'flex', alignItems: 'flex-end', height: '3rem' }}>
           <Col xs="6">
-            <p className="text-white">
+            <p className="text-white m-0">
               autor:
               {' '}
-              {rock.author}
+              <p style={{ whiteSpace: 'no-wrap', display: 'inline-block' }}>{rock.author}</p>
             </p>
           </Col>
           <Col xs="6" style={{ textAlign: 'right' }}>
-            <p className="text-white">
+            <p className="text-white m-0">
               ocena:
               {' '}
-              {rock.ratingsum === 0 || rock.votes === 0 ? ('Brak ocen') : (renderRatingStars(getRate(rock.ratingsum, rock.votes)))}
+              <p style={{ whiteSpace: 'no-wrap', display: 'inline-block' }}>{rock.ratingsum === 0 || rock.votes === 0 ? ('Brak ocen') : (renderRatingStars(getRate(rock.ratingsum, rock.votes)))}</p>
             </p>
           </Col>
         </Row>
@@ -288,19 +290,28 @@ class RockView extends React.Component {
               </ListGroup>
               <Row className="px-4 py-3">
                 <Col>
-                  <Form id="add-comment" onSubmit={this.handleSubmit}>
-                    <FormGroup>
-                      <Input
-                        type="textarea"
-                        name="comment"
-                        id="comment"
-                        placeholder="Dodaj swój komentarz."
-                        value={comment}
-                        onChange={this.handleCommentChange}
-                      />
-                    </FormGroup>
-                    <Button color="info" disabled={!comment}>Skomentuj</Button>
-                  </Form>
+                  {loggedIn ? (
+                    <Form id="add-comment" onSubmit={this.handleSubmit}>
+                      <FormGroup>
+                        <Input
+                          type="textarea"
+                          name="comment"
+                          id="comment"
+                          placeholder="Dodaj swój komentarz."
+                          value={comment}
+                          onChange={this.handleCommentChange}
+                        />
+                      </FormGroup>
+                      <Button color="info" disabled={!comment}>Skomentuj</Button>
+                    </Form>
+                  ) : (
+                    <div>
+                      <Link to="/login">
+                       Zaloguj się
+                      </Link>
+                     , aby dodawać komentarze
+                    </div>
+                  )}
                 </Col>
               </Row>
             </Card>

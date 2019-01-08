@@ -41,7 +41,10 @@ export function signUp(formData) {
       }).catch(reject);
   }).catch(async (err) => {
     await statusMessage(dispatch, 'loading', false);
-    throw err.message;
+    if (err.message === 'Password should be at least 6 characters') throw ErrorMessages.passwordTooShort;
+    if (err.message === 'The email address is badly formatted.') throw ErrorMessages.emailBadlyFormatted;
+    else if (err.message === 'There is no user record corresponding to this identifier. The user may have been deleted.') throw ErrorMessages.user404;
+    else throw err.message;
   });
 }
 
@@ -137,6 +140,8 @@ export function login(formData) {
         }).catch(reject));
   }).catch(async (err) => {
     await statusMessage(dispatch, 'loading', false);
+    if (err.message === 'The email address is badly formatted.') throw ErrorMessages.emailBadlyFormatted;
+    else if (err.message === 'There is no user record corresponding to this identifier. The user may have been deleted.') throw ErrorMessages.user404;
     throw err.message;
   });
 }
@@ -160,7 +165,9 @@ export function resetPassword(formData) {
       .catch(reject);
   }).catch(async (err) => {
     await statusMessage(dispatch, 'loading', false);
-    throw err.message;
+    if (err.message === 'The email address is badly formatted.') throw ErrorMessages.emailBadlyFormatted;
+    else if (err.message === 'There is no user record corresponding to this identifier. The user may have been deleted.') throw ErrorMessages.user404;
+    else throw err.message;
   });
 }
 
@@ -217,6 +224,8 @@ export function updateProfile(formData) {
       }).catch(reject);
   }).catch(async (err) => {
     await statusMessage(dispatch, 'loading', false);
+    if (err.message === 'The email address is badly formatted.') throw ErrorMessages.emailBadlyFormatted;
+    else if (err.message === 'There is no user record corresponding to this identifier. The user may have been deleted.') throw ErrorMessages.user404;
     throw err.message;
   });
 }

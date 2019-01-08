@@ -12,7 +12,8 @@ class RockContainer extends Component {
     rocks: PropTypes.shape({
       loading: PropTypes.bool.isRequired,
       error: PropTypes.string,
-    }).isRequired,
+      rocks: PropTypes.arrayOf(PropTypes.shape()),
+    }),
     match: PropTypes.shape({
       params: PropTypes.shape({}),
     }),
@@ -24,6 +25,7 @@ class RockContainer extends Component {
 
   static defaultProps = {
     match: null,
+    rocks: { loading: true, error: false, rocks: [] },
   }
 
   // check if Layout has changed and refetch Rocks if so
@@ -35,6 +37,7 @@ class RockContainer extends Component {
     }
   }
 
+  // Let the initial render and then fetch content
   componentDidMount = () => {
     if (this.props.Layout === ArticleListing) {
       this.fetchNewestRocks();

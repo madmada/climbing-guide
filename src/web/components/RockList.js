@@ -17,17 +17,19 @@ import rockTypes from '../../constants/rockTypes';
 import regionTypes from '../../constants/regionTypes';
 import { renderRatingStars, getRate, timestampToDate, scrollTop } from '../../helpers';
 import Error from './Error';
+import Loading from './Loading';
 
 class RockListing extends React.Component {
   static propTypes = {
     error: PropTypes.string,
     loading: PropTypes.bool.isRequired,
-    rocks: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+    rocks: PropTypes.arrayOf(PropTypes.shape()),
     searchRocks: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
     error: null,
+    rocks: {},
   }
 
   constructor(props) {
@@ -105,7 +107,14 @@ class RockListing extends React.Component {
       popoverOpen,
     } = this.state;
 
+    // Redirect
     if (redirect) return <Redirect push to={this.state.link} />;
+
+    // Page content loading
+    if (loading) return <Loading />;
+
+    // Error
+    if (error) return <Error content={error} />;
 
     const row = rocks.slice(0, 15).map(item => (
       <tr key={item.name} onClick={() => this.handleRowClick(item.id)}>
@@ -118,9 +127,6 @@ class RockListing extends React.Component {
       </tr>
     ));
 
-    // Error
-    if (error) return <Error content={error} />;
-
     return (
       <div>
         <Row>
@@ -130,7 +136,7 @@ class RockListing extends React.Component {
             </h1>
           </Col>
         </Row>
-        <Form onSubmit={this.handleSubmit} onClick={() => this.setState({ popoverOpen: false })}>
+        <Form onSubmit={this.handleSubmit} onClick={() => this.setState({ popoverOpen: false })} acceptCharset="ISO-8859-1">
           <Row>
             <Col lg={3}>
               <FormGroup>
@@ -142,7 +148,7 @@ class RockListing extends React.Component {
                   value={name}
                   autoComplete="off"
                   onChange={this.handleChange}
-                  pattern="[a-zA-Z]*"
+                  pattern="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ ]*"
                 />
                 <FilterResults
                   value={name}

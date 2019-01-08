@@ -27,3 +27,9 @@
     align-items: center;
   }
 }
+
+.star-ratings {
+  display: flex !important;
+  flex-wrap: nowrap;
+}
+

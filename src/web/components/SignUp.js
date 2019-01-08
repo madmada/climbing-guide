@@ -97,6 +97,7 @@ class SignUp extends React.Component {
                       placeholder="Jan"
                       value={firstName}
                       onChange={this.handleChange}
+                      pattern="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ]*"
                     />
                   </FormGroup>
                   <FormGroup>
@@ -110,6 +111,7 @@ class SignUp extends React.Component {
                       placeholder="Kowalski"
                       value={lastName}
                       onChange={this.handleChange}
+                      pattern="[a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻ-]*"
                     />
                   </FormGroup>
 
